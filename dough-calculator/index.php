@@ -116,7 +116,7 @@
         <input type="text" id="inputRemainingWater" class="form-control" value="106" aria-describedby="" disabled readonly>
     </div>
     <div class="col-auto">
-        <label for="inputRemainingSalt" class="col-form-label">Poolish Yeast Weight</label>
+        <label for="inputRemainingSalt" class="col-form-label">Poolish Salt Weight</label>
         <input type="text" id="inputRemainingSalt" class="form-control" value="9" aria-describedby="" disabled readonly>
     </div>
 </div>
