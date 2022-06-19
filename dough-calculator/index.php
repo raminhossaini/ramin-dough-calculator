@@ -95,6 +95,10 @@
         <label for="inputPoolishYeast" class="col-form-label">Poolish Yeast Weight</label>
         <input type="text" id="inputPoolishYeast" class="form-control" value="3" aria-describedby="" disabled readonly>
     </div>
+    <div class="col-auto">
+        <label for="inputPoolishHoney" class="col-form-label">Poolish Honey Weight</label>
+        <input type="text" id="inputPoolishHoney" class="form-control" value="6" aria-describedby="" disabled readonly>
+    </div>
 
 </div>
 
@@ -121,6 +125,15 @@
     </div>
 </div>
 
+<h2 class="mt-3">Final Steps:</h2>
+<ul>
+    <li>Mix all together</li>
+    <li>Cover and let rest for 20 minutes</li>
+    <li>Knead dough</li>
+    <li>Split by portion weight and form into balls</li>
+    <li>Place on tray and cover with cling-film. Let rest 1 - 2 hours.</li>
+    <li>Form pizza bases</li>
+</ul>
 
 </div>
 
@@ -146,11 +159,13 @@ $( "input" ).keyup(function() {
         $("#inputPoolishFlour").val("100");
         $("#inputPoolishWater").val("100");
         $("#inputPoolishYeast").val("3");
+        $("#inputPoolishHoney").val("2");
     }
     else if (waterWeight > 400 && waterWeight < 2501) {
         $("#inputPoolishFlour").val("300");
         $("#inputPoolishWater").val("300");
         $("#inputPoolishYeast").val("6");
+        $("#inputPoolishHoney").val("6");
     }
 
     var poolishFlourWeight = parseInt($("#inputPoolishFlour").val());
