@@ -6,49 +6,57 @@
 	<meta name="viewport" content="width=device-width">
 
     <link rel="shortcut icon" href="">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <title>Ramin's Pizza-dough Calculator</title>
 </head>
 
 <body>
 
+
 <div class="container">
 
-<h1 class="mt-3">Pizza-dough calculator</h1>
+<nav class="navbar navbar-dark bg-primary mb-3">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/dough-calculator/">Ramin's Pizza-dough calculator</a>
+        <span class="navbar-text">Version 1.0.220601</span>
+
+    </div>
+</nav>
 
 <div class="row g-3 align-items-center">
   
     <!-- Portions -->
     <div class="col-auto">
-
-        <label for="inputPortions" class="col-form-label">Portions</label>
-        <div class="col-auto">
-            <input type="text" id="inputPortions" class="form-control" value="2" aria-describedby="inputPortionsDescription">
-            <span id="inputPortionsDescription" class="form-text">Number of balls</span>
+        <div class="input-group mb-3">
+        <span class="input-group-text">Portions</span>
+        <input type="text" id="inputPortions" class="form-control" aria-label="" value="2">
+        <span class="input-group-text">number of balls</span>
         </div>
     </div>
 
     <!-- Portion size -->
     <div class="col-auto">
 
-        <label for="inputPortionSize" class="col-form-label">Portion Size</label>
-        <div class="col-auto">
-            <input type="text" id="inputPortionSize" class="form-control" value="250" aria-describedby="inputPortionSizeDescription">
-            <span id="inputPortionSizeDescription" class="form-text">g</span>
+        <div class="input-group mb-3">
+        <span class="input-group-text">Portion Size</span>
+        <input type="text" id="inputPortionSize" class="form-control" aria-label="" value="250">
+        <span class="input-group-text">g</span>
         </div>
+
     </div>
 
     <!-- Hydration -->
     <div class="col-auto">
-
-        <label for="inputHydration" class="col-form-label">Hydration</label>
-        <div class="col-auto">
-            <input type="text" id="inputHydration" class="form-control" value="70" aria-describedby="inputHydrationDescription">
-            <span id="inputHydrationDescription" class="form-text">As a percentage</span>
-        </div>
+        <div class="input-group mb-3">
+        <span class="input-group-text">Hydration</span>
+        <input type="text" id="inputHydration" class="form-control" aria-label="" value="70">
+        <span class="input-group-text">%</span>
     </div>
+
+
 </div>
 
 
