@@ -136,11 +136,12 @@
 <h2 class="mt-3">Final Steps:</h2>
 <ul>
     <li>Mix all together</li>
-    <li>Cover and let rest for 20 minutes</li>
-    <li>Knead dough</li>
+    <li>Cover and let rest for 20-30 minutes (autolyse)</li>
+    <li>Knead dough and form into ball. Don't worry if dough is still sticky at this stage.</li>
+    <li>Cover and let rest another 15-20 minutes. Dough will be easier to work with after this period. Dough should be smooth on the surface, bounce back when poked, and pass the <a href="https://www.kingarthurbaking.com/blog/2022/10/14/what-is-the-windowpane-test-for-bread-dough">windowpane test</a>.</li>
     <li>Split by portion weight and form into balls</li>
-    <li>Place on tray and cover with cling-film. Let rest 1 - 2 hours.</li>
-    <li>Form pizza bases</li>
+    <li>Place on tray and cover with cling-film or cover container with lid. Let rest 1 - 2 hours until dough doubles in size. This could vary depending on your room temperature.</li>
+    <li>Form pizza bases and bake!</li>
 </ul>
 
 </div>
