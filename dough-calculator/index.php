@@ -21,7 +21,7 @@
 <nav class="navbar navbar-dark bg-primary mb-3">
     <div class="container-fluid">
         <a class="navbar-brand" href="/dough-calculator/">Ramin's Pizza-dough calculator</a>
-        <span class="navbar-text">Version 1.0.230527</span>
+        <span class="navbar-text">Version 1.0.230720</span>
 
     </div>
 </nav>
