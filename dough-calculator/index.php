@@ -100,7 +100,7 @@
         <input type="text" id="inputPoolishWater" class="form-control" value="100" aria-describedby="" disabled readonly>
     </div>
     <div class="col-auto">
-        <label for="inputPoolishYeast" class="col-form-label">Poolish Yeast Weight</label>
+        <label for="inputPoolishYeast" class="col-form-label">Poolish Instant Yeast Weight</label>
         <input type="text" id="inputPoolishYeast" class="form-control" value="3" aria-describedby="" disabled readonly>
     </div>
     <div class="col-auto">
