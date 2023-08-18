@@ -21,7 +21,7 @@
     <nav class="navbar navbar-dark bg-primary mb-3">
         <div class="container-fluid">
             <a class="navbar-brand" href="/dough-calculator/">Ramin's Pizza-dough Calculator</a>
-            <span class="navbar-text">Version 1.0.230818</span>
+            <span class="navbar-text"><a href="https://github.com/raminhossaini/ramin-dough-calculator/commits/main">Version 1.0.230818</a></span>
         </div>
     </nav>
 
