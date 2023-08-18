@@ -1,6 +1,10 @@
 <!doctype html>
 
 <head>
+    <?php
+        //Add analytics code here
+        include_once "gtag.txt";
+    ?>
     <meta name="author" content="Ramin Hossaini">
 	<meta name="description" content="A Pizza-dough calculator">
 	<meta name="viewport" content="width=device-width">
