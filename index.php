@@ -6,9 +6,9 @@
 	<meta name="viewport" content="width=device-width">
 
     <link rel="shortcut icon" href="">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
     <title>Ramin's Pizza-dough Calculator</title>
 </head>
@@ -21,7 +21,7 @@
 <nav class="navbar navbar-dark bg-primary mb-3">
     <div class="container-fluid">
         <a class="navbar-brand" href="/dough-calculator/">Ramin's Pizza-dough calculator</a>
-        <span class="navbar-text">Version 1.0.230720</span>
+        <span class="navbar-text">Version 1.0.230818</span>
 
     </div>
 </nav>
@@ -62,50 +62,74 @@
 
 <div class="row mt-3">
 
+	<div class="alert alert-warning" id="portion-warning" role="alert">
+	  The poolish amount of 300:300 is ideal for portions up to 12. For more portions, I recommend splitting the recipe in 2 or more!
+	</div>
 
     <!-- Total Dough Weight -->
     <div class="col-auto">
-        <label for="inputTotalDoughWeight" class="col-form-label">Total Dough Weight</label>
-        <input type="text" id="inputTotalDoughWeight" class="form-control" value="500" aria-describedby="" disabled readonly>
+        <form class="form-floating">
+            <input type="text" id="inputTotalDoughWeight" class="form-control" value="" aria-describedby="" disabled readonly>
+            <label for="inputTotalDoughWeight" class="col-form-label">Total Dough Weight (g)</label>
+        </form>
+
     </div>
 
     <!-- Total Flour Weight -->
     <div class="col-auto">
-        <label for="inputFlour" class="col-form-label">Total Flour Weight</label>
-        <input type="text" id="inputFlour" class="form-control" value="294" aria-describedby="" disabled readonly>
+        <form class="form-floating">
+            <input type="text" id="inputFlour" class="form-control" value="" aria-describedby="" disabled readonly>
+            <label for="inputFlour">Total Flour Weight (g)</label>
+        </form>
     </div>
 
     <!-- Total Water -->
     <div class="col-auto">
-        <label for="inputWater" class="col-form-label">Total Water Weight</label>
-        <input type="text" id="inputWater" class="form-control" value="206" aria-describedby="" disabled readonly>
+        <form class="form-floating">
+            <input type="text" id="inputWater" class="form-control" value="" aria-describedby="" disabled readonly>
+            <label for="inputWater">Total Water (g)</label>
+        </form>
     </div>
 
     <!-- Total Salt -->
     <div class="col-auto">
-        <label for="inputSalt" class="col-form-label">Total Salt Weight</label>
-        <input type="text" id="inputSalt" class="form-control" value="9" aria-describedby="" disabled readonly>
+        <form class="form-floating">
+            <input type="text" id="inputSalt" class="form-control" value="" aria-describedby="" disabled readonly>
+            <label for="inputSalt">Total Salt (g)</label>
+        </form>
     </div>
+
 </div>
 
 <h2 class="mt-3">Step 1:</h2>
 
 <div class="row">
     <div class="col-auto">
-        <label for="inputPoolishFlour" class="col-form-label">Poolish Flour Weight</label>
-        <input type="text" id="inputPoolishFlour" class="form-control" value="100" aria-describedby="" disabled readonly>
+        <form class="form-floating">
+            <input type="text" id="inputPoolishFlour" class="form-control" value="100" aria-describedby="" disabled readonly>
+            <label for="inputPoolishFlour">Poolish Flour (g)</label>
+        </form>
     </div>
+    
     <div class="col-auto">
-        <label for="inputPoolishWater" class="col-form-label">Poolish Water Weight</label>
-        <input type="text" id="inputPoolishWater" class="form-control" value="100" aria-describedby="" disabled readonly>
+        <form class="form-floating">
+            <input type="text" id="inputPoolishWater" class="form-control" value="100" aria-describedby="" disabled readonly>
+            <label for="inputPoolishWater">Poolish Water (g)</label>
+        </form>
     </div>
+
     <div class="col-auto">
-        <label for="inputPoolishYeast" class="col-form-label">Poolish Instant Yeast Weight</label>
-        <input type="text" id="inputPoolishYeast" class="form-control" value="3" aria-describedby="" disabled readonly>
+        <form class="form-floating">
+            <input type="text" id="inputPoolishYeast" class="form-control" value="3" aria-describedby="" disabled readonly>
+            <label for="inputPoolishYeast">Poolish Instant Yeast (g)</label>
+        </form>
     </div>
+
     <div class="col-auto">
-        <label for="inputPoolishHoney" class="col-form-label">Poolish Honey Weight</label>
-        <input type="text" id="inputPoolishHoney" class="form-control" value="6" aria-describedby="" disabled readonly>
+        <form class="form-floating">
+            <input type="text" id="inputPoolishHoney" class="form-control" value="6" aria-describedby="" disabled readonly>
+            <label for="inputPoolishHoney">Poolish Honey (g)</label>
+        </form>
     </div>
 
 </div>
@@ -119,18 +143,28 @@
 <h2 class="mt-3">Step 2:</h2>
 
 <div class="row">
+
     <div class="col-auto">
-        <label for="inputRemainingFlour" class="col-form-label">Remaining Flour Weight</label>
-        <input type="text" id="inputRemainingFlour" class="form-control" value="194" aria-describedby="" disabled readonly>
+        <form class="form-floating">
+            <input type="text" id="inputRemainingFlour" class="form-control" value="194" aria-describedby="" disabled readonly>
+            <label for="inputRemainingFlour">Remaining Flour (g)</label>
+        </form>
     </div>
+
     <div class="col-auto">
-        <label for="inputRemainingWater" class="col-form-label">Remaining Water Weight</label>
-        <input type="text" id="inputRemainingWater" class="form-control" value="106" aria-describedby="" disabled readonly>
+        <form class="form-floating">
+            <input type="text" id="inputRemainingWater" class="form-control" value="106" aria-describedby="" disabled readonly>
+            <label for="inputRemainingWater">Remaining Water (g)</label>
+        </form>
     </div>
+
     <div class="col-auto">
-        <label for="inputRemainingSalt" class="col-form-label">Poolish Salt Weight</label>
-        <input type="text" id="inputRemainingSalt" class="form-control" value="9" aria-describedby="" disabled readonly>
+        <form class="form-floating">
+            <input type="text" id="inputRemainingSalt" class="form-control" value="9" aria-describedby="" disabled readonly>
+            <label for="inputRemainingSalt">Poolish Salt (g)</label>
+        </form>
     </div>
+
 </div>
 
 <h2 class="mt-3">Final Steps:</h2>
@@ -148,7 +182,7 @@
 
 <script>
 
-$( "input" ).keyup(function() {
+function refresh_data() {
     var portionSize = parseInt($("#inputPortionSize").val());
     var portions = parseInt($("#inputPortions").val());
     var hydration = parseInt($("#inputHydration").val());
@@ -158,6 +192,12 @@ $( "input" ).keyup(function() {
     var waterWeight = Math.round((hydration / 100) * flourWeight);              //Water is HYDRATION /100 * flourWeight
     var saltWeight = Math.round( 0.03 * flourWeight);                           //Salt is 3% of Flour weight
 
+	if (portions > 12) {
+		$("#portion-warning").show();	
+	}
+	else {
+		$("#portion-warning").hide();
+	}
 
     $("#inputTotalDoughWeight").val(totalDoughWeight); 
     $("#inputFlour").val(flourWeight); 
@@ -189,7 +229,16 @@ $( "input" ).keyup(function() {
     $("#inputRemainingWater").val(remainingWater);
     $("#inputRemainingSalt").val(remainingSalt);
 
+}
 
+//Refresh when key is pressed
+$( "input" ).keyup(function() {
+    refresh_data();
+});
+
+//Initial refresh of numbers when page loads
+$( document ).ready(function() {
+    refresh_data();
 });
 
 </script>
