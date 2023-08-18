@@ -67,7 +67,7 @@
     <h2 class="">Final Result:</h2>
 
         <!-- Total Dough Weight -->
-        <div class="col">
+        <div class="col-auto">
             <form class="form-floating">
                 <input type="text" id="inputTotalDoughWeight" class="form-control" value="" aria-describedby="" disabled readonly>
                 <label for="inputTotalDoughWeight" class="col-form-label">Total Dough Weight (g)</label>
@@ -76,7 +76,7 @@
         </div>
 
         <!-- Total Flour Weight -->
-        <div class="col">
+        <div class="col-auto">
             <form class="form-floating">
                 <input type="text" id="inputFlour" class="form-control" value="" aria-describedby="" disabled readonly>
                 <label for="inputFlour">Total Flour Weight (g)</label>
@@ -84,7 +84,7 @@
         </div>
 
         <!-- Total Water -->
-        <div class="col">
+        <div class="col-auto">
             <form class="form-floating">
                 <input type="text" id="inputWater" class="form-control" value="" aria-describedby="" disabled readonly>
                 <label for="inputWater">Total Water (g)</label>
@@ -92,7 +92,7 @@
         </div>
 
         <!-- Total Salt -->
-        <div class="col">
+        <div class="col-auto">
             <form class="form-floating">
                 <input type="text" id="inputSalt" class="form-control" value="" aria-describedby="" disabled readonly>
                 <label for="inputSalt">Total Salt (g)</label>
@@ -104,28 +104,28 @@
 
     <div class="row">
         <h2 class="gy-5">Step 1:</h2>
-        <div class="col">
+        <div class="col-auto">
             <form class="form-floating">
                 <input type="text" id="inputPoolishFlour" class="form-control" value="100" aria-describedby="" disabled readonly>
                 <label for="inputPoolishFlour">Poolish Flour (g)</label>
             </form>
         </div>
         
-        <div class="col">
+        <div class="col-auto">
             <form class="form-floating">
                 <input type="text" id="inputPoolishWater" class="form-control" value="100" aria-describedby="" disabled readonly>
                 <label for="inputPoolishWater">Poolish Water (g)</label>
             </form>
         </div>
 
-        <div class="col">
+        <div class="col-auto">
             <form class="form-floating">
                 <input type="text" id="inputPoolishYeast" class="form-control" value="3" aria-describedby="" disabled readonly>
                 <label for="inputPoolishYeast">Poolish Instant Yeast (g)</label>
             </form>
         </div>
 
-        <div class="col">
+        <div class="col-auto">
             <form class="form-floating">
                 <input type="text" id="inputPoolishHoney" class="form-control" value="6" aria-describedby="" disabled readonly>
                 <label for="inputPoolishHoney">Poolish Honey (g)</label>
@@ -153,21 +153,21 @@
         <h2 class="gy-5">Step 2:</h2>
         <p>Add the following to your fermented poolish:</p>
 
-        <div class="col">
+        <div class="col-auto">
             <form class="form-floating">
                 <input type="text" id="inputRemainingFlour" class="form-control" value="194" aria-describedby="" disabled readonly>
                 <label for="inputRemainingFlour">Flour (g)</label>
             </form>
         </div>
 
-        <div class="col">
+        <div class="col-auto">
             <form class="form-floating">
                 <input type="text" id="inputRemainingWater" class="form-control" value="106" aria-describedby="" disabled readonly>
                 <label for="inputRemainingWater">Water (g)</label>
             </form>
         </div>
 
-        <div class="col">
+        <div class="col-auto">
             <form class="form-floating">
                 <input type="text" id="inputRemainingSalt" class="form-control" value="9" aria-describedby="" disabled readonly>
                 <label for="inputRemainingSalt">Salt (g)</label>
