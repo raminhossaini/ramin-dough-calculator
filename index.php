@@ -134,14 +134,19 @@
 
 </div>
 
-<ul>
-    <li>Mix and let sit for 1 hour</li>
-    <li>Refrigerate for 16-24 hrs</li>
+<ul class="list-group">
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="" id="poolish-step1">
+    <label class="form-check-label stretched-link" for="poolish-step1">Mix and let sit for 1 hour at room temperature.</label>
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="" id="poolish-step2">
+    <label class="form-check-label stretched-link" for="poolish-step2">Refrigerate for 16-24 hrs.</label>
+  </li>
 </ul>
 
 
 <h2 class="mt-3">Step 2:</h2>
-
 <div class="row">
 
     <div class="col-auto">
@@ -168,14 +173,37 @@
 </div>
 
 <h2 class="mt-3">Final Steps:</h2>
-<ul>
-    <li>Mix all together</li>
-    <li>Cover and let rest for 20-30 minutes (autolyse)</li>
-    <li>Knead dough and form into ball. Don't worry if dough is still sticky at this stage.</li>
-    <li>Cover and let rest another 15-20 minutes. Dough will be easier to work with after this period. Dough should be smooth on the surface, bounce back when poked, and pass the <a href="https://www.kingarthurbaking.com/blog/2022/10/14/what-is-the-windowpane-test-for-bread-dough">windowpane test</a>.</li>
-    <li>Split by portion weight and form into balls</li>
-    <li>Place on tray and cover with cling-film or cover container with lid. Let rest 1 - 2 hours until dough doubles in size. This could vary depending on your room temperature.</li>
-    <li>Form pizza bases and bake!</li>
+
+<ul class="list-group">
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="" id="final-step1">
+    <label class="form-check-label stretched-link" for="final-step1">Mix all together</label>
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="" id="final-step2">
+    <label class="form-check-label stretched-link" for="final-step2">Cover and let rest for 20-30 minutes (autolyse)</label>
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="" id="final-step3">
+    <label class="form-check-label stretched-link" for="final-step3">Knead dough and form into ball. Don't worry if dough is still sticky at this stage.</label>
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="" id="final-step4">
+    <label class="form-check-label stretched-link" for="final-step4"><p>Cover and let rest another 15-20 minutes.</p> <p>Dough will be easier to work with after this period.</p> <p>Dough should be smooth on the surface, bounce back when poked, and pass the <a href="https://www.kingarthurbaking.com/blog/2022/10/14/what-is-the-windowpane-test-for-bread-dough">windowpane test</a>.</p></label>
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="" id="final-step5">
+    <label class="form-check-label stretched-link" for="final-step5">Split by portion weight and form into balls</label>
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="" id="final-step6">
+    <label class="form-check-label stretched-link" for="final-step6"><p>Place on tray and cover with cling-film or cover container with lid.</p> <p>Let rest 1 - 2 hours until dough doubles in size.</p> <p>This could vary depending on your room temperature.</p></label>
+  </li>
+  <li class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="" id="final-step7">
+    <label class="form-check-label stretched-link" for="final-step7">Form pizza bases and bake!</label>
+  </li>
+
 </ul>
 
 </div>
