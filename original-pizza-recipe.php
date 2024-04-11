@@ -9,7 +9,8 @@
 	<meta name="description" content="A Pizza-dough calculator">
 	<meta name="viewport" content="width=device-width">
 
-    <link rel="shortcut icon" href="">
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+
     <!-- Bootstrap https://getbootstrap.com/docs/5.3/getting-started/introduction/ -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
@@ -33,21 +34,10 @@
 
 
 <div class="container">
+    <?php include './include/navbar.php';?>
 
-    <nav class="navbar bg-primary mb-3" data-bs-theme="dark">
-        <div class="container-fluid">
-                <a class="navbar-brand" href="/dough-calculator/">Ramin's Pizza-dough Calculator</a>
-                <span class="navbar-text"><a class="nav-link active" href="https://github.com/raminhossaini/ramin-dough-calculator/commits/main">Version 1.0.230902</a></span>
-            </span>
-        </div>
-    </nav>
+    <h1>Original 24-hour Pizza Dough</h1>
 
-<!--    <span>
-        <span class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" role="switch" id="toggleTime" checked>
-        <label class="form-check-label" for="toggleTime"><i class="bi bi-clock" alttext="Toggle time controls"></i></label>
-    </span>
--->    
     <!-- DateTime Picker -->
     <div class="row g-3 align-items-center timeModule">
         <div class="col-auto">
@@ -262,13 +252,7 @@
         </div>
     </div>
 
-<nav class="navbar navbar-dark bg-primary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="https://www.ramin-hossaini.com/2022/06/poolish-pizza-dough-calculator/">Made in good faith by Ramin Hossaini</a>
-        <span class="navbar-text"><a href="https://www.ramin-hossaini.com/contact/">Contact</a></span>
-
-    </div>
-</nav>
+    <?php include './include/footer.php'; ?>
 
 
 </div> <!-- container -->

@@ -12,7 +12,7 @@
     <?php include './include/includes.php'; ?>
     <link rel="shortcut icon" type="image/png" href="favicon.png"/>
     
-    <title>Ramin's Pizza-dough Calculator</title>
+    <title>FAQs</title>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
 <?php include './include/navbar.php';?>
    
     <div class="row g-3 align-items-center">
-        <h2>Ramin's Pizza Calculators</h2>
+        <h2>FAQs</h2>
     </div>
  
 <?php include './include/footer.php'; ?>
