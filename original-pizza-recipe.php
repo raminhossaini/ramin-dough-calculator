@@ -68,13 +68,11 @@
 
         <!-- Portion size -->
         <div class="col-auto">
-
             <div class="input-group mb-3">
             <span class="input-group-text">Portion Size</span>
             <input type="text" id="inputPortionSize" class="form-control" aria-label="" value="260">
             <span class="input-group-text">g</span>
             </div>
-
         </div>
 
         <!-- Hydration -->
@@ -83,7 +81,7 @@
             <span class="input-group-text">Hydration</span>
             <input type="text" id="inputHydration" class="form-control" aria-label="" value="70">
             <span class="input-group-text">%</span>
-        </div>
+            </div>
     </div>
 
     <div class="row">
@@ -265,7 +263,7 @@ function refresh_data() {
     var hydration = parseInt($("#inputHydration").val());
     
     var totalDoughWeight = Math.round( portions * portionSize );                //Dough weight is PORTIONS * PORTION-SIZE
-    var flourWeight = Math.round( totalDoughWeight / ((hydration/100)+1) );     //Flour weight is TOTAL-DOUGH-WEIGHT / ((HYDRATION / 100) + 1)
+    var flourWeight = Math.round( totalDoughWeight / ((hydration/100) + (3/100)+1));     //Flour weight is TOTAL-DOUGH-WEIGHT / ((HYDRATION / 100) + 1)
     var waterWeight = Math.round((hydration / 100) * flourWeight);              //Water is HYDRATION /100 * flourWeight
     var saltWeight = Math.round( 0.03 * flourWeight);                           //Salt is 3% of Flour weight
 

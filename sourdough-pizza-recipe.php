@@ -1,5 +1,12 @@
 <!doctype html>
-
+<!--
+TODO:
+    - Warning when hydration is out of tested range
+    - Time calculations
+    - FAQs section
+        - How to make stiff sourdough starter
+        - Note on 3% salt value
+-->
 <head>
     <?php
         //Add analytics code here
@@ -38,9 +45,11 @@
 
     <h1>Ramin's Sourdough Pizza Recipe</h1>
 
-    <div class="row g-3 align-items-center">
+    
+    <div class="row">
+        
         <!-- Portions -->
-        <div class="col-auto">
+        <div class="col">
             <div class="input-group mb-3">
             <span class="input-group-text">Portions</span>
             <input type="text" id="inputPortions" class="form-control" aria-label="" value="2">
@@ -49,39 +58,57 @@
         </div>
 
         <!-- Portion size -->
-        <div class="col-auto">
-
+        <div class="col">
             <div class="input-group mb-3">
             <span class="input-group-text">Portion Size</span>
             <input type="text" id="inputPortionSize" class="form-control" aria-label="" value="250">
             <span class="input-group-text">g</span>
             </div>
-
         </div>
 
         <!-- Hydration -->
-        <div class="col-auto">
+        <div class="col">
             <div class="input-group mb-3">
             <span class="input-group-text">Hydration</span>
             <input type="text" id="inputHydration" class="form-control" aria-label="" value="70">
             <span class="input-group-text">%</span>
+            </div>
+        </div>
+
+        <!-- Sourdough Starter % -->
+        <div class="col">
+            <div class="input-group mb-3">
+            <span class="input-group-text">Sourdough Starter %</span>
+            <input type="text" id="inputSourdoughPercentage" class="form-control" aria-label="" value="5">
+            <span class="input-group-text">%</span>
+            </div>
         </div>
     </div>
+
+    <!-- Any warning messages come here -->
+    <div class="row">
+        <div class="col">
+            <div class="alert alert-warning" id="hydration-warning" role="alert">
+                Please note that I haven't experimented with hydration lower than 70% for this recipe, so I wouldn't personally deviate too much.
+            </div>
+        </div>
+    </div> <!-- row -->
+
+
 
     <div class="row">
     <h2 class="">Final Result:</h2>
 
         <!-- Total Dough Weight -->
-        <div class="col-auto">
+        <div class="col">
             <form class="form-floating font-monospace">
                 <input type="text" id="inputTotalDoughWeight" class="form-control" value="" aria-describedby="" disabled readonly>
                 <label for="inputTotalDoughWeight" class="col-form-label">Total Dough Weight (g)</label>
             </form>
-
         </div>
 
         <!-- Total Flour Weight -->
-        <div class="col-auto">
+        <div class="col">
             <form class="form-floating font-monospace">
                 <input type="text" id="totalFlour" class="form-control" value="" aria-describedby="" disabled readonly>
                 <label for="totalFlour">Total Flour Weight (g)</label>
@@ -89,25 +116,42 @@
         </div>
 
         <!-- Total Water -->
-        <div class="col-auto">
+        <div class="col">
             <form class="form-floating font-monospace">
                 <input type="text" id="totalWater" class="form-control" value="" aria-describedby="" disabled readonly>
                 <label for="totalWater">Total Water (g)</label>
             </form>
         </div>
 
+        <!-- Total Sourdough Starter -->
+        <div class="col">
+            <form class="form-floating font-monospace">
+                <input type="text" id="totalSourdoughStarter" class="form-control" value="" aria-describedby="" disabled readonly>
+                <label for="totalSourdoughStarter">Total Sourdough Starter (g)</label>
+            </form>
+        </div>
+
         <!-- Total Salt -->
-        <div class="col-auto">
+        <div class="col">
             <form class="form-floating font-monospace">
                 <input type="text" id="totalSalt" class="form-control" value="" aria-describedby="" disabled readonly>
                 <label for="totalSalt">Total Salt (g)</label>
             </form>
         </div>
+    </div> <!-- row -->
 
+    <div class="row debug">
+        <div class="col">
+            <div class="alert alert-warning" id="calculationsCheck" role="alert">
+                hello
+            </div>
+        </div>
     </div> <!-- row -->
 
 
-    <div class="row">
+
+
+    <div class="row mb-2">
         <h2 class="gy-5">Autolyse:</h2>
         <div class="col-auto">
             <form class="form-floating font-monospace">
@@ -131,8 +175,8 @@
         </div>
     </div> <!-- row -->
 
-    <div class="row gy-1">
-        <div class="col">
+    <div class="row">
+        <div class="col-auto">
             <ul class="list-group">
             <li class="list-group-item">
                 <input class="form-check-input me-1" type="checkbox" value="" id="autolyse-step1">
@@ -190,7 +234,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mb-5">
         <h2 class="gy-5">On Day of Eating</h2>
         <div class="row gy-1">
             <div class="col">        
@@ -219,27 +263,63 @@
 </div> <!-- container -->
 
 <script>
+    var debug = false;
+
     function refresh_data()
     {
         var portionSize = parseInt($("#inputPortionSize").val());
         var portions = parseInt($("#inputPortions").val());
         var hydration = parseInt($("#inputHydration").val());
- 
-        var totalDoughWeight = Math.round( portions * portionSize );                //Dough weight is PORTIONS * PORTION-SIZE
-        var flourWeight = Math.round( totalDoughWeight / ((hydration/100)+1) );     //Flour weight is TOTAL-DOUGH-WEIGHT / ((HYDRATION / 100) + 1)
-        var waterWeight = Math.round((hydration / 100) * flourWeight);              //Water is HYDRATION /100 * flourWeight
-        var saltWeight = Math.round( 0.03 * flourWeight);                           //Salt is 3% of Flour weight
+        var sourdoughPercentage = parseInt($("#inputSourdoughPercentage").val()); 
 
-        var sourdoughStarterWeight = Math.round(0.05 * flourWeight);
+        var totalDoughWeight = Math.round( portions * portionSize);                 //Dough weight is PORTIONS * PORTION-SIZE - this is the targer
+        
+        var flourWeight = Math.round( totalDoughWeight / ((hydration/100) + (3/100) + (sourdoughPercentage/100) +1) );     //Flour weight is TOTAL-DOUGH-WEIGHT / ((HYDRATION / 100) + 1)
+        var waterWeight = Math.round((hydration / 100) * flourWeight);              //Water is HYDRATION /100 * flourWeight
+        var sourdoughStarterWeight = Math.round((sourdoughPercentage/100) * flourWeight);
+        var saltWeight = Math.round( 0.03 * flourWeight);                           //Salt is 3% of Flour weight        
+
 
         $("#inputTotalDoughWeight").val(totalDoughWeight); 
         $("#totalFlour").val(flourWeight); 
-        $("#totalWater").val(waterWeight); 
+        $("#totalWater").val(waterWeight);
+        $("#totalSourdoughStarter").val(sourdoughStarterWeight); 
         $("#inputFlour").val(flourWeight); 
         $("#inputWater").val(waterWeight); 
         $("#totalSalt").val(saltWeight); 
         $("#inputSalt").val(saltWeight); 
         $("#inputSourdoughStarter").val(sourdoughStarterWeight);
+
+        //hide warnings by default
+        $("#hydration-warning").hide();
+        $("#calculationsCheck").hide();
+
+        //Show/Hide the Hydration Warning
+        if (hydration < 60 || hydration > 75) {
+            $("#hydration-warning").show();
+        }
+
+        if (debug == true) {
+            $("#calculationsCheck").show();
+
+            //do some calulcations and checks
+            //add all weights together
+            var calc1 = flourWeight + waterWeight + sourdoughStarterWeight + saltWeight;
+            var calc2 = totalDoughWeight;
+            if (calc1 / calc2 > 0.99) {
+                $("#calculationsCheck").text("Value totals are correct");
+            }
+            else
+            {
+                $("#calculationsCheck").text("Value totals are not correct: Looking for "+calc2+" but got "+calc1);
+            }
+
+            $("#calculationsCheck").append("<p>Salt % is: " + Math.round(saltWeight / flourWeight * 100) + "</p>");
+            $("#calculationsCheck").append("<p>Water % is: " + Math.round(waterWeight / flourWeight * 100) + "</p>");
+            $("#calculationsCheck").append("<p>Sourdough Starter % is: " + Math.round(sourdoughStarterWeight / flourWeight * 100) + "</p>");
+            
+
+        }
 
     }
 
