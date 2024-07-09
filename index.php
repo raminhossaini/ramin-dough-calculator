@@ -36,7 +36,7 @@
 <div class="container">
     <?php include './include/navbar.php';?>
 
-    <h1>Original 24-hour Pizza Dough</h1>
+    <h2>Original 24-hour Pizza Dough</h2>
 
     <!-- DateTime Picker -->
     <div class="row g-3 align-items-center timeModule">

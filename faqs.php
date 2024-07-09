@@ -36,7 +36,6 @@
 
         <h3>Vito does a double fermentation, how come the calculator doesn't?</h3>
         <p>I made the Original 24-hour Pizza Dough from one of his recipes. Vito has many other recipes, but I have not had the time to make calculators for them.</p>
-    
     </div>
  
 <?php include './include/footer.php'; ?>
