@@ -1,7 +1,6 @@
 <!doctype html>
 <!--
 TODO:
-    - Warning when hydration is out of tested range
     - Time calculations
     - FAQs section
         - How to make stiff sourdough starter
@@ -44,12 +43,18 @@ TODO:
     <?php include './include/navbar.php';?>
 
     <h1>Ramin's Sourdough Pizza Recipe</h1>
-
+    <div class="row">
+        <div class="col">
+            <div class="alert alert-warning" id="BETA-WARNING" role="alert">
+                This is a recipe I have been experimenting with for while now. It is still in its early stages and might not be perfect. Treat it as such.
+            </div>
+        </div>
+    </div> <!-- row -->
     
     <div class="row">
         
         <!-- Portions -->
-        <div class="col">
+        <div class="col-auto">
             <div class="input-group mb-3">
             <span class="input-group-text">Portions</span>
             <input type="text" id="inputPortions" class="form-control" aria-label="" value="2">
@@ -58,16 +63,17 @@ TODO:
         </div>
 
         <!-- Portion size -->
-        <div class="col">
+        <div class="col-auto">
             <div class="input-group mb-3">
             <span class="input-group-text">Portion Size</span>
             <input type="text" id="inputPortionSize" class="form-control" aria-label="" value="250">
             <span class="input-group-text">g</span>
             </div>
         </div>
-
+        </div>
+        <div class="row">
         <!-- Hydration -->
-        <div class="col">
+        <div class="col-auto">
             <div class="input-group mb-3">
             <span class="input-group-text">Hydration</span>
             <input type="text" id="inputHydration" class="form-control" aria-label="" value="70">
@@ -76,7 +82,7 @@ TODO:
         </div>
 
         <!-- Sourdough Starter % -->
-        <div class="col">
+        <div class="col-auto">
             <div class="input-group mb-3">
             <span class="input-group-text">Sourdough Starter %</span>
             <input type="text" id="inputSourdoughPercentage" class="form-control" aria-label="" value="5">
@@ -89,7 +95,7 @@ TODO:
     <div class="row">
         <div class="col">
             <div class="alert alert-warning" id="hydration-warning" role="alert">
-                Please note that I haven't experimented with hydration lower than 70% for this recipe, so I wouldn't personally deviate too much.
+                Please note that I haven't experimented with hydration lower than 65% for this recipe, so I wouldn't personally deviate too much.
             </div>
         </div>
     </div> <!-- row -->
@@ -99,8 +105,9 @@ TODO:
     <div class="row">
     <h2 class="">Final Result:</h2>
 
+    <div class="row mb-2">
         <!-- Total Dough Weight -->
-        <div class="col">
+        <div class="col-auto">
             <form class="form-floating font-monospace">
                 <input type="text" id="inputTotalDoughWeight" class="form-control" value="" aria-describedby="" disabled readonly>
                 <label for="inputTotalDoughWeight" class="col-form-label">Total Dough Weight (g)</label>
@@ -108,7 +115,7 @@ TODO:
         </div>
 
         <!-- Total Flour Weight -->
-        <div class="col">
+        <div class="col-auto">
             <form class="form-floating font-monospace">
                 <input type="text" id="totalFlour" class="form-control" value="" aria-describedby="" disabled readonly>
                 <label for="totalFlour">Total Flour Weight (g)</label>
@@ -116,23 +123,26 @@ TODO:
         </div>
 
         <!-- Total Water -->
-        <div class="col">
+        <div class="col-auto">
             <form class="form-floating font-monospace">
                 <input type="text" id="totalWater" class="form-control" value="" aria-describedby="" disabled readonly>
                 <label for="totalWater">Total Water (g)</label>
             </form>
         </div>
 
+    </div> <!-- row -->
+    <div class="row">
+
         <!-- Total Sourdough Starter -->
-        <div class="col">
+        <div class="col-auto">
             <form class="form-floating font-monospace">
                 <input type="text" id="totalSourdoughStarter" class="form-control" value="" aria-describedby="" disabled readonly>
-                <label for="totalSourdoughStarter">Total Sourdough Starter (g)</label>
+                <label for="totalSourdoughStarter">Total Starter (g)</label>
             </form>
         </div>
 
         <!-- Total Salt -->
-        <div class="col">
+        <div class="col-auto">
             <form class="form-floating font-monospace">
                 <input type="text" id="totalSalt" class="form-control" value="" aria-describedby="" disabled readonly>
                 <label for="totalSalt">Total Salt (g)</label>
@@ -195,7 +205,7 @@ TODO:
     </div>
 
     <div class="row">
-        <h2 class="gy-5">Bulk Ferment</h2>
+        <h2 class="gy-5">Bulk Ferment:</h2>
 
         <!-- Total Salt -->
         <div class="col-auto">
@@ -223,7 +233,7 @@ TODO:
 
 
     <div class="row">
-        <h2 class="gy-5">Cold Proof</h2>
+        <h2 class="gy-5">Cold Proof:</h2>
         <div class="col">
             <ul class="list-group">
             <li class="list-group-item">
@@ -235,7 +245,7 @@ TODO:
     </div>
 
     <div class="row mb-5">
-        <h2 class="gy-5">On Day of Eating</h2>
+        <h2 class="gy-5">On Day of Eating:</h2>
         <div class="row gy-1">
             <div class="col">        
 
@@ -270,7 +280,7 @@ TODO:
         var portionSize = parseInt($("#inputPortionSize").val());
         var portions = parseInt($("#inputPortions").val());
         var hydration = parseInt($("#inputHydration").val());
-        var sourdoughPercentage = parseInt($("#inputSourdoughPercentage").val()); 
+        var sourdoughPercentage = parseFloat($("#inputSourdoughPercentage").val()); 
 
         var totalDoughWeight = Math.round( portions * portionSize);                 //Dough weight is PORTIONS * PORTION-SIZE - this is the targer
         

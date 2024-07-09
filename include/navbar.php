@@ -1,6 +1,6 @@
 
-<nav class="navbar bg-primary mb-3 navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-<!--<nav class="navbar bg-primary mb-3 navbar-expand-lg" data-bs-theme="dark">-->
+<!--<nav class="navbar bg-primary mb-3 navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">-->
+<nav class="navbar bg-primary mb-3 navbar-expand-lg" data-bs-theme="dark">
     <div class="container-fluid">
             <a class="navbar-brand" href="index.php">Ramin's Pizza Calculators</a>
                 <!-- Dropdown -->
@@ -10,7 +10,7 @@
                         Recipe Calculators
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="original-pizza-recipe.php">Original 24-hour Pizza Dough</a></li>
+                        <li><a class="dropdown-item" href="index.php">Original 24-hour Pizza Dough</a></li>
                         <li><a class="dropdown-item" href="sourdough-pizza-recipe.php">Ramin's Sourdough Pizza</a></li>
                     </ul>
                     </li>
@@ -22,7 +22,7 @@
                     </li>
                 </ul>
 
-            <span class="navbar-text"><a class="nav-link active" href="https://github.com/raminhossaini/ramin-dough-calculator/commits/main">Version 2.0.240411
+            <span class="navbar-text"><a class="nav-link" href="https://github.com/raminhossaini/ramin-dough-calculator/commits/main">Version 2.0.240411
 
             </a></span>
         </span>
