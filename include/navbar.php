@@ -18,6 +18,9 @@
                         <a class="nav-link" href="faqs.php">FAQs</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="https://www.ramin-hossaini.com/donate/">Donate</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="https://www.ramin-hossaini.com/contact/">Contact</a>
                     </li>
                 </ul>
