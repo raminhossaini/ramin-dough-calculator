@@ -6,6 +6,9 @@ Page is built using the Bootstrap framework and JQuery.
 # Link to demo:
 https://calculators.ramin.io
 
+# Screenshot(s)
+![Screenshot 1](screenshot1.png "Screenshot 1")
+
 # Blog Post
 https://www.ramin-hossaini.com/2022/06/poolish-pizza-dough-calculator/
 
