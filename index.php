@@ -38,6 +38,12 @@
 
     <h2>Original 24-hour Pizza Dough</h2>
 
+    <div class="row">
+        <div class="col align-self-end">
+        One of three columns
+        </div>
+    </div>
+
     <!-- DateTime Picker -->
     <div class="row g-3 align-items-center timeModule">
         <div class="col-auto">
@@ -346,6 +352,12 @@ $("#toggleTime").click(function () {
 
 //Initial refresh of numbers when page loads
 $( document ).ready(function() {
+
+    //Print button
+    const printButton = document.getElementById("print-button");
+    printButton.addEventListener('click', function() {
+        window.print();
+    });
 
     $("#inputDate").flatpickr({
         minDate: "today"
