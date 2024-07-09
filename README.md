@@ -4,7 +4,7 @@ A very simple page that makes the calculations you need to make a pizza.
 Page is built using the Bootstrap framework and JQuery.
 
 # Link to demo:
-https://dev.ramin-hossaini.com/dough-calculator/
+https://calculators.ramin.io
 
 # Blog Post
 https://www.ramin-hossaini.com/2022/06/poolish-pizza-dough-calculator/
