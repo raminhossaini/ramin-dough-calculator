@@ -22,7 +22,7 @@
                     </li>
                 </ul>
 
-            <span class="navbar-text"><a class="nav-link" href="https://github.com/raminhossaini/ramin-dough-calculator/commits/main">Version 2.0.240411
+            <span class="navbar-text"><a class="nav-link" href="https://github.com/raminhossaini/ramin-dough-calculator/commits/main">Version 2.0.240709
 
             </a></span>
         </span>
