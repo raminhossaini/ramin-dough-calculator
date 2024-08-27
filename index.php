@@ -39,51 +39,65 @@
     <h2>Original 24-hour Pizza Dough</h2>
 
     <!-- DateTime Picker -->
-    <div class="row g-3 align-items-center timeModule">
+    <div class="row g-3 align-items-center timeModule mb-3">
         <div class="col-auto">
-            <div class="input-group mb-3">
+            <div class="input-group">
                 <span class="input-group-text">Planned Date to Eat</span>
                 <input type="text" id="inputDate" class="form-control" aria-label="" value="<?=date("Y-m-d");?>">
                 <span class="input-group-text"><i class='bi bi-calendar-week'></i></span>
             </div>
         </div>
         <div class="col-auto">
-            <div class="input-group mb-3">
+            <div class="input-group">
                 <span class="input-group-text">Time</i></span>
                 <input type="text" id="inputTime" class="form-control" aria-label="" value="<?=date("H")+25;?>">
                 <span class="input-group-text"><i class='bi bi-clock'></i></span>
             </div>
         </div>
     </div>
+    </div>
 
-    <div class="row g-3 align-items-center">
+    <div class="container">
+    <div class="row">
         <!-- Portions -->
-        <div class="col-auto">
+        <div class="col-md-2">
             <div class="input-group mb-3">
             <span class="input-group-text">Portions</span>
             <input type="text" id="inputPortions" class="form-control" aria-label="" value="2">
-            <span class="input-group-text">number of balls</span>
-            </div>
+            <span class="input-group-text">balls</span>
+            </div> <!-- Input group -->
         </div>
 
         <!-- Portion size -->
-        <div class="col-auto">
+        <div class="col-md-3">
             <div class="input-group mb-3">
             <span class="input-group-text">Portion Size</span>
             <input type="text" id="inputPortionSize" class="form-control" aria-label="" value="260">
             <span class="input-group-text">g</span>
-            </div>
+            </div> <!-- Input group -->
         </div>
 
         <!-- Hydration -->
-        <div class="col-auto">
+        <div class="col-md-2">
             <div class="input-group mb-3">
             <span class="input-group-text">Hydration</span>
             <input type="text" id="inputHydration" class="form-control" aria-label="" value="70">
             <span class="input-group-text">%</span>
-            </div>
+            </div> <!-- Input group -->
+        </div>
+
+        <!-- Salt -->
+        <div class="col-md-2">
+            <div class="input-group mb-3">
+            <span class="input-group-text">Salt</span>
+            <input type="text" id="inputSalt" class="form-control" aria-label="" value="3">
+            <span class="input-group-text">%</span>
+            </div> <!-- Input group -->
+        </div>
+    </div>
     </div>
 
+    <div class="container">
     <div class="row">
         <div class="col">
             <div class="alert alert-warning" id="portion-warning" role="alert">
@@ -123,15 +137,15 @@
         <!-- Total Salt -->
         <div class="col-auto">
             <form class="form-floating font-monospace">
-                <input type="text" id="inputSalt" class="form-control" value="" aria-describedby="" disabled readonly>
-                <label for="inputSalt">Total Salt (g)</label>
+                <input type="text" id="inputSaltAmount" class="form-control" value="" aria-describedby="" disabled readonly>
+                <label for="inputSaltAmount">Total Salt (g)</label>
             </form>
         </div>
 
     </div> <!-- row -->
 
 
-    <div class="row">
+    <div class="row mb-3">
         <h2 class="gy-5">Step 1 - Make the poolish:</h2>
         <p class="timeModule" id="labelDateTimeToStart"></p>
         <div class="col-auto">
@@ -178,7 +192,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mb-3">
         <h2 class="gy-5">Step 2 - Final Mix:</h2>
         <p class="timeModule" id="labelStep2DateTime"></p>
 
@@ -252,7 +266,7 @@
 
     <?php include './include/footer.php'; ?>
 
-
+</div> <!-- container -->
 </div> <!-- container -->
 
 <script>
@@ -261,11 +275,12 @@ function refresh_data() {
     var portionSize = parseInt($("#inputPortionSize").val());
     var portions = parseInt($("#inputPortions").val());
     var hydration = parseInt($("#inputHydration").val());
-    
+    var salt = parseFloat($("#inputSalt").val());
+
     var totalDoughWeight = Math.round( portions * portionSize );                //Dough weight is PORTIONS * PORTION-SIZE
-    var flourWeight = Math.round( totalDoughWeight / ((hydration/100) + (3/100)+1));     //Flour weight is TOTAL-DOUGH-WEIGHT / ((HYDRATION / 100) + 1)
+    var flourWeight = Math.round( totalDoughWeight / ((hydration/100) + (salt/100)+1));     //Flour weight is TOTAL-DOUGH-WEIGHT / ((HYDRATION / 100) + 1)
     var waterWeight = Math.round((hydration / 100) * flourWeight);              //Water is HYDRATION /100 * flourWeight
-    var saltWeight = Math.round( 0.03 * flourWeight);                           //Salt is 3% of Flour weight
+    var saltWeight = Math.round( (salt / 100) * flourWeight);                   //Salt is 3% of Flour weight
 
 
     // Time calculations. Working backwards from time to eat
@@ -303,7 +318,7 @@ function refresh_data() {
     $("#inputTotalDoughWeight").val(totalDoughWeight); 
     $("#inputFlour").val(flourWeight); 
     $("#inputWater").val(waterWeight); 
-    $("#inputSalt").val(saltWeight); 
+    $("#inputSaltAmount").val(saltWeight); 
 
     if (waterWeight < 401) {
         $("#inputPoolishFlour").val("100");
