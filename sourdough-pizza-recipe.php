@@ -76,7 +76,7 @@ TODO:
         <div class="col-auto">
             <div class="input-group mb-3">
             <span class="input-group-text">Hydration</span>
-            <input type="text" id="inputHydration" class="form-control" aria-label="" value="70">
+            <input type="text" id="inputHydration" class="form-control" aria-label="" value="68">
             <span class="input-group-text">%</span>
             </div>
         </div>
@@ -198,7 +198,7 @@ TODO:
             </li>
             <li class="list-group-item">
                 <input class="form-check-input me-1" type="checkbox" value="" id="autolyse-step3">
-                <label class="form-check-label stretched-link" for="autolyse-step2">Let sit, covered, for 20-30 minutes.</label>
+                <label class="form-check-label stretched-link" for="autolyse-step3">Let sit, covered, for 20-30 minutes.</label>
             </li>
             </ul>
         </div>
