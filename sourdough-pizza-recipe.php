@@ -238,7 +238,7 @@ TODO:
             <ul class="list-group">
             <li class="list-group-item">
                 <input class="form-check-input me-1" type="checkbox" value="" id="cold-proof-step1">
-                <label class="form-check-label stretched-link" for="cold-proof-step1">Form into a large ball and transfer to refigerator overnight</label>
+                <label class="form-check-label stretched-link" for="cold-proof-step1">Must pass window-pane test. Form into balls and transfer to refigerator overnight. Avoid using flour.</label>
             </li>
             </ul>
         </div>
@@ -253,10 +253,6 @@ TODO:
                     <li class="list-group-item">
                         <input class="form-check-input me-1" type="checkbox" value="" id="bake-day-step1">
                         <label class="form-check-label stretched-link" for="bake-day-step1">6 hours before eating, take out of the refrigerator to reach room temperature. May need more time if room temp is cold.</label>
-                    </li>
-                    <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="" id="bake-day-step2">
-                        <label class="form-check-label stretched-link" for="bake-day-step2">3 hours before baking, knead dough and divide to form into balls. Use olive oil if sticky. Don't use flour.</label>
                     </li>
                     <li class="list-group-item">
                         <input class="form-check-input me-1" type="checkbox" value="" id="bake-day-step3">
