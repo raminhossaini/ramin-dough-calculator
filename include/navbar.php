@@ -17,6 +17,8 @@
                     </a>
                     <ul class="dropdown-menu" data-bs-theme="light">
                         <li><a class="dropdown-item" href="index.php">Original 24-hour Pizza Dough</a></li>
+                        <li><a class="dropdown-item" href="biga-recipe-24.php">Ramin's 24-hour 100% Biga Recipe</a></li>
+                        <li><a class="dropdown-item" href="biga-recipe.php">Ramin's 48-hour 100% Biga Recipe</a></li>
                         <li><a class="dropdown-item" href="sourdough-pizza-recipe.php">Ramin's Sourdough Pizza</a></li>
                     </ul>
                     </li>
