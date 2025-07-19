@@ -36,7 +36,7 @@
 <div class="container">
     <?php include './include/navbar.php';?>
 
-    <h2>Ramin's 24-hour 100% Biga Recipe</h2>
+    <h2>Original 24-hour 100% Biga Recipe</h2>
 
     <!-- DateTime Picker -->
     <div class="row g-3 align-items-center timeModule mb-3">
@@ -193,12 +193,12 @@
                 <label class="form-check-label stretched-link" for="step2-2">Add remaining yeast and slowly add water+salt solution to the fermented biga, and continue to the final steps</label>
             </li>
             <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="step2-2">
-                <label class="form-check-label stretched-link" for="step2-2">Mix all together in mixer. Form into ball.</label>
+                <input class="form-check-input me-1" type="checkbox" value="" id="step2-3">
+                <label class="form-check-label stretched-link" for="step2-3">Mix all together in mixer. Form into ball.</label>
             </li>
             <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="step2-2">
-                <label class="form-check-label stretched-link" for="step2-2">Leave at room temperature for 30 min.</label>
+                <input class="form-check-input me-1" type="checkbox" value="" id="step2-4">
+                <label class="form-check-label stretched-link" for="step2-4">Leave at room temperature for 30 min.</label>
             </li>
         </ul>
     </div>
