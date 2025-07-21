@@ -220,7 +220,7 @@
 
 
     <div class="row">
-        <h2 class="gy-5">Step 3 - Last fermentation</h2>
+        <h2 class="gy-5">Step 3 - Final Proof</h2>
         <div class="col">
             <ul class="list-group">
             <li class="list-group-item">

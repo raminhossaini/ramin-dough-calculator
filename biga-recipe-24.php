@@ -194,7 +194,7 @@
             </li>
             <li class="list-group-item">
                 <input class="form-check-input me-1" type="checkbox" value="" id="step2-3">
-                <label class="form-check-label stretched-link" for="step2-3">Mix all together in mixer. Form into ball.</label>
+                <label class="form-check-label stretched-link" for="step2-3">Mix all together in mixer (thoroughly). Form into ball.</label>
             </li>
             <li class="list-group-item">
                 <input class="form-check-input me-1" type="checkbox" value="" id="step2-4">
@@ -228,7 +228,7 @@
 
 
     <div class="row">
-        <h2 class="gy-5">Step 3 - Last fermentation</h2>
+        <h2 class="gy-5">Step 3 - Final Proof</h2>
         <p class="timeModule" id="labelDateTimeLastFermentation"></p>
         <div class="col">
             <ul class="list-group">
@@ -238,7 +238,7 @@
             </li>
             <li class="list-group-item">
                 <input class="form-check-input me-1" type="checkbox" value="" id="LastFermentation-step4">
-                <label class="form-check-label stretched-link" for="LastFermentation-step4"><p>Cover let rest another 1-2 hours</p> <p>Dough should be smooth on the surface, bounce back when poked, and pass the windowpane test.</p></label>
+                <label class="form-check-label stretched-link" for="LastFermentation-step4"><p>Cover let rest another 2-4 hours</p> <p>Dough should be smooth on the surface, bounce back when poked, and pass the windowpane test.</p></label>
             </li>
             </ul>
         </div>
@@ -292,12 +292,12 @@ function refresh_data() {
     //2. labelStepFinalMixDateTime
     //3. labelDateTimeToStartBake
 
-    var labelDateTimeToStartBakeEarliest = dayjs(eatDateTime).subtract(2, 'hour').format("ddd, DD-MMM-YYYY HH:mm");
-    var labelDateTimeToStartBakeLatest = dayjs(eatDateTime).subtract(1, 'hour').format("ddd, DD-MMM-YYYY HH:mm");
+    var labelDateTimeToStartBakeEarliest = dayjs(eatDateTime).subtract(4, 'hour').format("ddd, DD-MMM-YYYY HH:mm");
+    var labelDateTimeToStartBakeLatest = dayjs(eatDateTime).subtract(2, 'hour').format("ddd, DD-MMM-YYYY HH:mm");
 
     //var labelDateTimeToStartFinalSteps;
-    var labelStepFinalMixDateTimeEarliest = dayjs(labelDateTimeToStartBakeEarliest).subtract(0.5, 'hour').format("ddd, DD-MMM-YYYY HH:mm");;
-    var labelStepFinalMixDateTimeLatest = dayjs(labelDateTimeToStartBakeLatest).subtract(0.5, 'hour').format("ddd, DD-MMM-YYYY HH:mm");;
+    var labelStepFinalMixDateTimeEarliest = dayjs(labelDateTimeToStartBakeEarliest).subtract(1, 'hour').format("ddd, DD-MMM-YYYY HH:mm");;
+    var labelStepFinalMixDateTimeLatest = dayjs(labelDateTimeToStartBakeLatest).subtract(1, 'hour').format("ddd, DD-MMM-YYYY HH:mm");;
 
     var labelDateTimeToStartBigaEarliest = dayjs(labelStepFinalMixDateTimeEarliest).subtract(24, 'hour').format("ddd, DD-MMM-YYYY HH:mm");   //24 hours before
     var labelDateTimeToStartBigaLatest = dayjs(labelStepFinalMixDateTimeLatest).subtract(16, 'hour').format("ddd, DD-MMM-YYYY HH:mm");   //24 hours before
