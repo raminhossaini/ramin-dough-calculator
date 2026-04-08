@@ -35,7 +35,10 @@
 
         <h3>Vito does a double fermentation, how come the calculator doesn't?</h3>
         <p>This calculator has now been added. You can find it <a href="<?=DOUBLE_FERMENTED;?>">here</a></p>
-    
+
+        <h3>How does the poolish percentage work with the Original recipe? Why does it go from 100 to 300?</h3>
+        <p>The videos of Vito specify using 300:300 for the poolish, and I had to re-adjust this recipe to use 100:100 for smaller portions. I have created the Version 2 calculator to take the poolish percentage into consideration and you can access it <a href="<?=ORIGINAL_V2;?>">here</a></p>
+
     </div>
  
 <?php include './include/footer.php'; ?>

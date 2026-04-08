@@ -17,6 +17,7 @@
                     </a>
                     <ul class="dropdown-menu" data-bs-theme="light">
                         <li><a class="dropdown-item" href="<?=ORIGINAL;?>">Original 24-hour Pizza Dough</a></li>
+                        <li><a class="dropdown-item" href="<?=ORIGINAL_V2;?>">Poolish 24-hour Pizza Dough V2</a></li>
                         <li><a class="dropdown-item" href="<?=DOUBLE_FERMENTED;?>">Double-fermented 48-hour Pizza Dough</a></li>
                         <li><a class="dropdown-item" href="<?=BIGA_24;?>">Original 24-hour 100% Biga Recipe</a></li>
                         <li><a class="dropdown-item" href="<?=BIGA_48;?>">Ramin's 48-hour 100% Biga Recipe</a></li>
