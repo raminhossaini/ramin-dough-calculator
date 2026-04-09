@@ -31,7 +31,7 @@
                         <a class="nav-link" href="https://www.ramin-hossaini.com/donate/">Donate</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://www.ramin-hossaini.com/contact/">Contact</a>
+                        <a class="nav-link" href="https://github.com/raminhossaini/ramin-dough-calculator/discussions">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://github.com/raminhossaini/ramin-dough-calculator">
