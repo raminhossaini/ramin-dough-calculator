@@ -13,4 +13,4 @@ https://calculators.ramin.io
 https://www.ramin-hossaini.com/2022/06/poolish-pizza-dough-calculator/
 
 # Contact
-https://www.ramin-hossaini.com/contact
+Please use the [discussions tab on github](https://github.com/raminhossaini/ramin-dough-calculator/discussions), as your question or feedback may be useful to others as well. You can always contact me using my [contact form](https://www.ramin-hossaini.com/contact/) or on [Discord](https://discord.com/users/87982937961660416)
