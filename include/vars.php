@@ -10,4 +10,6 @@ define("BIGA_24", "biga-recipe-24.php");
 define("BIGA_48", "biga-recipe.php");
 define("SOURDOUGH", "sourdough-pizza-recipe.php");
 
+define("GITHUB_ROOT", "https://github.com/raminhossaini/ramin-dough-calculator");
+
 ?>
