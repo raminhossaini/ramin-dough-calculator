@@ -24,6 +24,7 @@
     <?php include './include/navbar.php';?>
 
     <h2>Original 24-hour Pizza Dough</h2>
+    <?php include './include/page-actions.php'; ?>
 
     <!-- DateTime Picker -->
     <div class="row g-3 align-items-center timeModule mb-3">
@@ -258,6 +259,15 @@
 
 <script>
 
+function setDefaults() {
+    $('#inputDate').val(dayjs().format('YYYY-MM-DD'));
+    $('#inputTime').val(dayjs().add(25, 'hour').format('HH:mm'));
+    $('#inputPortions').val('2');
+    $('#inputPortionSize').val('260');
+    $('#inputHydration').val('70');
+    $('#inputSalt').val('3');
+}
+
 function refresh_data() {
     var portionSize = parseInt($("#inputPortionSize").val());
     var portions = parseInt($("#inputPortions").val());
@@ -355,19 +365,29 @@ $( document ).ready(function() {
         window.print();
     });
 
-    $("#inputDate").flatpickr({
+    var datePicker = $("#inputDate").flatpickr({
         minDate: "today"
     });
 
-    $("#inputTime").flatpickr({
+    var timePicker = $("#inputTime").flatpickr({
         enableTime: true,
         noCalendar: true,
         dateFormat: "H:i",
         time_24hr: true
     });
 
+    //Reset button
+    document.getElementById("reset-button").addEventListener('click', function(e) {
+        e.preventDefault();
+        clearPageStorage();
+        setDefaults();
+        datePicker.setDate(dayjs().toDate(), false);
+        timePicker.setDate(dayjs().add(25, 'hour').toDate(), false);
+        refresh_data();
+    });
+
     refresh_data();
-    
+
 });
 
 </script>

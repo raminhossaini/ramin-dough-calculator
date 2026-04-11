@@ -30,6 +30,7 @@ TODO:
     <?php include './include/navbar.php';?>
 
     <h1>Ramin's Sourdough Pizza Recipe</h1>
+    <?php include './include/page-actions.php'; ?>
     <div class="row">
         <div class="col">
             <div class="alert alert-warning" id="BETA-WARNING" role="alert">
@@ -258,6 +259,13 @@ TODO:
 <script>
     var debug = false;
 
+    function setDefaults() {
+        $('#inputPortions').val('2');
+        $('#inputPortionSize').val('250');
+        $('#inputHydration').val('68');
+        $('#inputSourdoughPercentage').val('5');
+    }
+
     function refresh_data()
     {
         var portionSize = parseInt($("#inputPortionSize").val());
@@ -326,6 +334,15 @@ TODO:
 
     //Initial refresh of numbers when page loads
     $( document ).ready(function() {
+
+        //Reset button
+        document.getElementById("reset-button").addEventListener('click', function(e) {
+            e.preventDefault();
+            clearPageStorage();
+            setDefaults();
+            refresh_data();
+        });
+
         refresh_data();
     });
 

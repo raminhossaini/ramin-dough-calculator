@@ -22,7 +22,19 @@
         });
     }
 
+    window.clearPageStorage = function () {
+        $('input[id]:not([disabled])').each(function () {
+            localStorage.removeItem(pageKey + ':' + this.id);
+            if (this.type === 'checkbox') {
+                this.checked = false;
+            }
+        });
+    };
+
     $(document).ready(function () {
+        if (typeof setDefaults === 'function') {
+            setDefaults();
+        }
         restoreInputs();
     });
 
