@@ -1,7 +1,7 @@
 <?php
 
 //Constants
-define("VERSION", "3.2.260408");
+define("VERSION", "4.0.260411");
 
 define("ORIGINAL", "poolish-24.php");
 define("ORIGINAL_V2", "poolish-v2.php");
