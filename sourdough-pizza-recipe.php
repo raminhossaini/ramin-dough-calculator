@@ -93,7 +93,7 @@ TODO:
     <div class="row">
     <h4 class="font-monospace">Final Result:</h4>
 
-    <div class="row mb-2">
+    <div class="row mb-2 gy-1">
         <!-- Total Dough Weight -->
         <div class="col-auto">
             <form class="form-floating font-monospace">
@@ -119,7 +119,7 @@ TODO:
         </div>
 
     </div> <!-- row -->
-    <div class="row">
+    <div class="row gy-1">
 
         <!-- Total Sourdough Starter -->
         <div class="col-auto">
@@ -149,7 +149,7 @@ TODO:
     <hr class="mt-3">
 
 
-    <div class="row mb-2">
+    <div class="row mb-2 gy-1">
         <h2 class=" font-monospace">Autolyse:</h2>
         <div class="col-auto">
             <form class="form-floating font-monospace">
@@ -192,7 +192,7 @@ TODO:
         </div>
     </div>
 
-    <div class="row">
+    <div class="row gy-1">
         <h2 class="gy-5 font-monospace">Bulk Ferment:</h2>
 
         <!-- Total Salt -->

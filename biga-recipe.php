@@ -88,7 +88,7 @@
 
     <div class="container">
  
-    <div class="row">
+    <div class="row gy-1">
     <h2 class="font-monospace">Final Result:</h2>
 
         <!-- Total Dough Weight -->
@@ -128,7 +128,7 @@
 
     <hr class="mt-3">
 
-    <div class="row mb-3">
+    <div class="row mb-3 gy-1">
         <h2 class="font-monospace">Step 1 - Make the biga pre-ferment:</h2>
         <p class="timeModule" id="labelDateTimeToStartBiga"></p>
         <div class="col-auto">

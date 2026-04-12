@@ -113,7 +113,7 @@
         </div>
     </div> <!-- row -->
 
-    <div class="row">
+    <div class="row gy-1">
     <h2 class="font-monospace">Final Result:</h2>
 
         <!-- Total Dough Weight -->
@@ -154,7 +154,7 @@
     <hr class="mt-3">
 
 
-    <div class="row mb-3">
+    <div class="row mb-3 gy-1">
         <h2 class="font-monospace">Step 1 - Make the poolish:</h2>
         <!--<p class="timeModule" id="labelDateTimeToStart"></p>-->
         <p class="timeModule" id="labelStep2DateTime"></p>
