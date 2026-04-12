@@ -24,7 +24,11 @@
 <div class="container">
     <?php include './include/navbar.php';?>
 
-    <h2>Double-fermented 48-hour Pizza Dough</h2>
+    <div class="mb-3">
+        <span class="h2 mb-3 font-monospace">Double-fermented 48-hour Pizza Dough</span>
+        <a href="<?=GITHUB_ROOT;?>/discussions/2"><span class="badge text-bg-secondary align-text-top">Beta</span></a>
+    </div>
+
     <?php include './include/page-actions.php'; ?>
 
     <!-- DateTime Picker -->
@@ -110,7 +114,7 @@
     </div> <!-- row -->
 
     <div class="row">
-    <h2 class="">Final Result:</h2>
+    <h2 class="font-monospace">Final Result:</h2>
 
         <!-- Total Dough Weight -->
         <div class="col-auto">
@@ -147,9 +151,11 @@
 
     </div> <!-- row -->
 
+    <hr class="mt-3">
+
 
     <div class="row mb-3">
-        <h2 class="gy-5">Step 1 - Make the poolish:</h2>
+        <h2 class="font-monospace">Step 1 - Make the poolish:</h2>
         <!--<p class="timeModule" id="labelDateTimeToStart"></p>-->
         <p class="timeModule" id="labelStep2DateTime"></p>
 
@@ -198,7 +204,7 @@
     </div>
 
     <div class="row mb-3">
-        <h2 class="gy-5">Step 2 - Final Mix:</h2>
+        <h2 class="gy-5 font-monospace">Step 2 - Final Mix:</h2>
         <p class="timeModule" id="labelStep3DateTime"></p>
 
         <ul class="list-group">
@@ -234,7 +240,7 @@
 
 
     <div class="row">
-        <h2 class="gy-5">Step 3 - Second Fermentation:</h2>
+        <h2 class="gy-5 font-monospace">Step 3 - Second Fermentation:</h2>
 
         <div class="col">
             <ul class="list-group">
@@ -263,7 +269,7 @@
     </div>
 
     <div class="row">
-        <h2 class="gy-5">Final Steps:</h2>
+        <h2 class="gy-5 font-monospace">Final Steps:</h2>
         <p class="timeModule" id="labelStep4DateTime"></p>
         <div class="col">
             <ul class="list-group">

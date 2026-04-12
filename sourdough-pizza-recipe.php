@@ -29,7 +29,7 @@ TODO:
 <div class="container">
     <?php include './include/navbar.php';?>
 
-    <h1>Ramin's Sourdough Pizza Recipe</h1>
+    <h2 class="font-monospace">Ramin's Sourdough Pizza Recipe</h1>
     <?php include './include/page-actions.php'; ?>
     <div class="row">
         <div class="col">
@@ -91,7 +91,7 @@ TODO:
 
 
     <div class="row">
-    <h2 class="">Final Result:</h2>
+    <h4 class="font-monospace">Final Result:</h4>
 
     <div class="row mb-2">
         <!-- Total Dough Weight -->
@@ -146,11 +146,11 @@ TODO:
         </div>
     </div> <!-- row -->
 
-
+    <hr class="mt-3">
 
 
     <div class="row mb-2">
-        <h2 class="gy-5">Autolyse:</h2>
+        <h2 class=" font-monospace">Autolyse:</h2>
         <div class="col-auto">
             <form class="form-floating font-monospace">
                 <input type="text" id="inputFlour" class="form-control" value="100" aria-describedby="" disabled readonly>
@@ -193,7 +193,7 @@ TODO:
     </div>
 
     <div class="row">
-        <h2 class="gy-5">Bulk Ferment:</h2>
+        <h2 class="gy-5 font-monospace">Bulk Ferment:</h2>
 
         <!-- Total Salt -->
         <div class="col-auto">
@@ -221,7 +221,7 @@ TODO:
 
 
     <div class="row">
-        <h2 class="gy-5">Cold Proof:</h2>
+        <h2 class="gy-5 font-monospace">Cold Proof:</h2>
         <div class="col">
             <ul class="list-group">
             <li class="list-group-item">
@@ -233,7 +233,7 @@ TODO:
     </div>
 
     <div class="row mb-5">
-        <h2 class="gy-5">On Day of Eating:</h2>
+        <h2 class="gy-5 font-monospace">On Day of Eating:</h2>
         <div class="row gy-1">
             <div class="col">        
 

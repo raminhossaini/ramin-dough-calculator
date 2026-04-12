@@ -22,8 +22,12 @@
 
 <div class="container">
     <?php include './include/navbar.php';?>
+    
+    <div class="mb-3">
+        <span class="h2 mb-3 font-monospace">Original 24-hour Pizza Dough</span>
+        <a href="<?=GITHUB_ROOT;?>/discussions/2"><span class="badge text-bg-secondary align-text-top">Beta</span></a>
+    </div>
 
-    <h2>Original 24-hour Pizza Dough</h2>
     <?php include './include/page-actions.php'; ?>
 
     <!-- DateTime Picker -->
@@ -109,7 +113,7 @@
     </div> <!-- row -->
 
     <div class="row">
-    <h2 class="">Final Result:</h2>
+    <h4 class="font-monospace">Final Result:</h4>
 
         <!-- Total Dough Weight -->
         <div class="col-auto">
@@ -146,9 +150,10 @@
 
     </div> <!-- row -->
 
+    <hr class="mt-3">
 
     <div class="row mb-3">
-        <h2 class="gy-5">Step 1 - Make the poolish:</h2>
+        <h2 class="font-monospace">Step 1 - Make the poolish:</h2>
         <p class="timeModule" id="labelDateTimeToStart"></p>
         <div class="col-auto">
             <form class="form-floating font-monospace">
@@ -195,7 +200,7 @@
     </div>
 
     <div class="row mb-3">
-        <h2 class="gy-5">Step 2 - Final Mix:</h2>
+        <h2 class="gy-5 font-monospace">Step 2 - Final Mix:</h2>
         <p class="timeModule" id="labelStep2DateTime"></p>
 
         <ul class="list-group">
@@ -231,7 +236,7 @@
 
 
     <div class="row">
-        <h2 class="gy-5">Final Steps:</h2>
+        <h2 class="gy-5 font-monospace">Final Steps:</h2>
         <div class="col">
             <ul class="list-group">
             <li class="list-group-item">
@@ -302,7 +307,6 @@ function refresh_data() {
     var poolishPercentageActive = $("#switchPoolishPercentage");
 
     if (poolishPercentageActive.prop('checked')) {
-        
         // Advanced method
         $("#portion-warning").hide();
 
@@ -312,10 +316,8 @@ function refresh_data() {
         $("#inputPoolishWater").val(poolishAmount / 2);
         $("#inputPoolishYeast").val(yeastAmount);               
         $("#inputPoolishHoney").val(honeyAmount);
-
     }
     else {
-
         // Simple method
         $("#inputPoolishPercentage").prop('disabled', true);
 
@@ -339,12 +341,11 @@ function refresh_data() {
             $("#inputPoolishYeast").val("6");
             $("#inputPoolishHoney").val("6");
         }
-
     }
+
     var poolishFlourWeight = parseInt($("#inputPoolishFlour").val());
     var poolishWaterWeight = parseInt($("#inputPoolishWater").val());
     var poolishYeastWeight = parseInt($("#inputPoolishYeast").val());
-
 
     // Time calculations. Working backwards from time to eat
     var dateTimeString = $("#inputDate").val() + " " + $("#inputTime").val();
@@ -377,9 +378,6 @@ function refresh_data() {
     $("#inputFlour").val(flourWeight); 
     $("#inputWater").val(waterWeight); 
     $("#inputSaltAmount").val(saltWeight); 
-
-
-
     $("#inputRemainingFlour").val(remainingFlour);
     $("#inputRemainingWater").val(remainingWater);
     $("#inputRemainingSalt").val(remainingSalt);

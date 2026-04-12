@@ -23,7 +23,7 @@
 <div class="container">
     <?php include './include/navbar.php';?>
 
-    <h2>Original 24-hour 100% Biga Recipe</h2>
+    <h2 class="font-monospace">Original 24-hour 100% Biga Recipe</h2>
     <?php include './include/page-actions.php'; ?>
 
     <!-- DateTime Picker -->
@@ -88,7 +88,7 @@
     <div class="container">
  
     <div class="row">
-    <h2 class="">Final Result:</h2>
+    <h2 class="font-monospace">Final Result:</h2>
 
         <!-- Total Dough Weight -->
         <div class="col-auto">
@@ -125,9 +125,11 @@
 
     </div> <!-- row -->
 
+    <hr class="mt-3">
+
 
     <div class="row mb-3">
-        <h2 class="gy-5">Step 1 - Make the biga pre-ferment:</h2>
+        <h2 class="font-monospace">Step 1 - Make the biga pre-ferment:</h2>
         <p class="timeModule" id="labelDateTimeToStartBiga"></p>
         <div class="col-auto">
             <form class="form-floating font-monospace">
@@ -168,7 +170,7 @@
     </div>
 
     <div class="row mb-3">
-        <h2 class="gy-5">Step 2 - Final Mix:</h2>
+        <h2 class="gy-5 font-monospace">Step 2 - Final Mix:</h2>
         <p class="timeModule" id="labelStepFinalMixDateTime"></p>
 
         <ul class="list-group">
@@ -216,7 +218,7 @@
 
 
     <div class="row">
-        <h2 class="gy-5">Step 3 - Final Proof</h2>
+        <h2 class="gy-5 font-monospace">Step 3 - Final Proof</h2>
         <p class="timeModule" id="labelDateTimeLastFermentation"></p>
         <div class="col">
             <ul class="list-group">
@@ -234,7 +236,7 @@
 
 
     <div class="row">
-        <h2 class="gy-5">Step 4 - Prepare and bake</h2>
+        <h2 class="gy-5 font-monospace">Step 4 - Prepare and bake</h2>
         <div class="col">
             <ul class="list-group">
             <li class="list-group-item">
