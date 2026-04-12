@@ -75,6 +75,20 @@
             </div> <!-- Input group -->
         </div>
 
+        <!-- Poolish Percentage -->
+        <div class="col-md-2 w-auto">
+            <div class="input-group mb-3">
+            <span class="input-group-text">
+                <input class="form-check-input me-2" type="checkbox" role="switch" id="switchPoolishPercentage"> 
+                Poolish Percentage
+            </span>
+            
+            <input type="text" id="inputPoolishPercentage" class="form-control" aria-label="" value="70">
+            <span class="input-group-text">%</span>
+            </div> <!-- Input group -->
+        </div>
+
+
         <!-- Salt -->
         <div class="col-md-2 w-auto">
             <div class="input-group mb-3">
@@ -287,6 +301,7 @@ function setDefaults() {
     $('#inputPortions').val('2');
     $('#inputPortionSize').val('260');
     $('#inputHydration').val('70');
+    $('#inputPoolishHydration').val('70');
     $('#inputSalt').val('3');
 }
 
@@ -295,11 +310,60 @@ function refresh_data() {
     var portions = parseInt($("#inputPortions").val());
     var hydration = parseInt($("#inputHydration").val());
     var salt = parseFloat($("#inputSalt").val());
+    var poolishPercentage = parseInt($("#inputPoolishPercentage").val());
 
     var totalDoughWeight = Math.round( portions * portionSize );                //Dough weight is PORTIONS * PORTION-SIZE
     var flourWeight = Math.round( totalDoughWeight / ((hydration/100) + (salt/100)+1));     //Flour weight is TOTAL-DOUGH-WEIGHT / ((HYDRATION / 100) + 1)
     var waterWeight = Math.round((hydration / 100) * flourWeight);              //Water is HYDRATION /100 * flourWeight
     var saltWeight = Math.round( (salt / 100) * flourWeight);                   //Salt is 3% of Flour weight
+
+    var poolishAmount = Math.round((poolishPercentage / 100) * flourWeight);               //The total amount of poolish required
+    var yeastAmount = Math.round( (1/100) * poolishAmount );     // Yeast is 1% of poolish value
+    var honeyAmount = Math.round( (1/100) * poolishAmount );     // Honey is 1% of poolish value
+
+    var poolishPercentageActive = $("#switchPoolishPercentage");
+
+
+    if (poolishPercentageActive.prop('checked')) {
+        
+        // Advanced method
+        $("#portion-warning").hide();
+
+        $("#inputPoolishPercentage").prop('disabled', false);
+
+        $("#inputPoolishFlour").val(poolishAmount / 2); //Our standard poolish proportion is 1:1 water:flour
+        $("#inputPoolishWater").val(poolishAmount / 2);
+        $("#inputPoolishYeast").val(yeastAmount);               
+        $("#inputPoolishHoney").val(honeyAmount);
+
+    }
+    else {
+        // Simple method
+        $("#inputPoolishPercentage").prop('disabled', true);
+
+        //Show a warning if making more than 12 portions
+        if (portions > 12) {
+            $("#portion-warning").show();	
+        }
+        else {
+            $("#portion-warning").hide();
+        }
+
+        if (waterWeight < 401) {
+            $("#inputPoolishFlour").val("100");
+            $("#inputPoolishWater").val("100");
+            $("#inputPoolishYeast").val("3");
+            $("#inputPoolishHoney").val("2");
+        }
+        else if (waterWeight > 400 && waterWeight < 2501) {
+            $("#inputPoolishFlour").val("300");
+            $("#inputPoolishWater").val("300");
+            $("#inputPoolishYeast").val("6");
+            $("#inputPoolishHoney").val("6");
+        }
+
+    }
+
 
 
     // Time calculations. Working backwards from time to eat
@@ -335,31 +399,10 @@ function refresh_data() {
     $("#labelDateTimeToStart").html("<i class='bi bi-clock'></i> Recommended time to start: Between <b>" + earliestStartDateTime + "</b> and <b>" + latestStartDateTime + "</b>");
 
 
-    //Show a warning if making more than 12 portions
-	if (portions > 12) {
-		$("#portion-warning").show();	
-	}
-	else {
-		$("#portion-warning").hide();
-	}
-
     $("#inputTotalDoughWeight").val(totalDoughWeight); 
     $("#inputFlour").val(flourWeight); 
     $("#inputWater").val(waterWeight); 
     $("#inputSaltAmount").val(saltWeight); 
-
-    if (waterWeight < 401) {
-        $("#inputPoolishFlour").val("100");
-        $("#inputPoolishWater").val("100");
-        $("#inputPoolishYeast").val("3");
-        $("#inputPoolishHoney").val("2");
-    }
-    else if (waterWeight > 400 && waterWeight < 2501) {
-        $("#inputPoolishFlour").val("300");
-        $("#inputPoolishWater").val("300");
-        $("#inputPoolishYeast").val("6");
-        $("#inputPoolishHoney").val("6");
-    }
 
     var poolishFlourWeight = parseInt($("#inputPoolishFlour").val());
     var poolishWaterWeight = parseInt($("#inputPoolishWater").val());
