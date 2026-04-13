@@ -82,10 +82,11 @@
         <div class="col-md-2 w-auto">
             <div class="input-group mb-3">
             <span class="input-group-text">
-                <input class="form-check-input me-2" type="checkbox" role="switch" id="switchPoolishPercentage"> 
-                Poolish Percentage
+                <div class="form-switch">
+                    <input class="form-check-input me-2" type="checkbox" role="switch" id="switchPoolishPercentage"> 
+                    Poolish Percentage
+                </div>
             </span>
-            
             <input type="text" id="inputPoolishPercentage" class="form-control" aria-label="" value="70">
             <span class="input-group-text">%</span>
             </div> <!-- Input group -->
