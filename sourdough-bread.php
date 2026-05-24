@@ -58,15 +58,6 @@
             </div> <!-- Input group -->
         </div>
 
-        <!-- Flour Amount -->
-        <div class="col-md-2 w-auto">
-            <div class="input-group mb-3">
-            <span class="input-group-text">Target Total Weight</span>
-            <input type="text" id="inputTotalWeight" class="form-control" aria-label="" value="900">
-            <span class="input-group-text">g</span>
-            </div> <!-- Input group -->
-        </div>
-
         <!-- Salt Percentage -->
         <div class="col-md-2 w-auto">
             <div class="input-group mb-3">
@@ -75,8 +66,29 @@
             <span class="input-group-text">%</span>
             </div> <!-- Input group -->
         </div>
-
     </div>
+        <div class="row">
+                    <!-- Weight / Flour inputs with mode toggle -->
+            <div class="col-md-2 w-auto">
+                <div class="btn-group btn-group-sm mb-2" role="group">
+                    <input type="radio" class="btn-check" name="calcMode" id="modeWeight" autocomplete="off" checked>
+                    <label class="btn btn-outline-secondary" for="modeWeight">By Total Weight</label>
+                    <input type="radio" class="btn-check" name="calcMode" id="modeFlour" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="modeFlour">By Flour Amount</label>
+                </div>
+                <div class="input-group mb-2">
+                    <span class="input-group-text">Target Total Weight</span>
+                    <input type="text" id="inputTotalWeight" class="form-control" aria-label="" value="900">
+                    <span class="input-group-text">g</span>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Flour Amount</span>
+                    <input type="text" id="inputFlourAmount" class="form-control" aria-label="" value="" disabled>
+                    <span class="input-group-text">g</span>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <div class="container">
@@ -160,7 +172,7 @@
             </li>
             <li class="list-group-item">
                 <input class="form-check-input me-1" type="checkbox" value="" id="final-step5">
-                <label class="form-check-label stretched-link" id="final-step5-label" for="final-step4"></label>
+                <label class="form-check-label stretched-link" id="final-step5-label" for="final-step5"></label>
             </li>
             </ul>
         </div>
@@ -187,8 +199,10 @@ function setDefaults() {
     $('#inputSourdoughStarter').val('80');
     $('#inputSourdoughHydration').val('100');
     $('#inputTargetHydration').val('75');
-    $('#inputTotalWeight').val('900');
+    $('#inputTotalWeight').val('900').prop('disabled', false);
     $('#inputSalt').val('2');
+    $('#modeWeight').prop('checked', true);
+    $('#inputFlourAmount').val('').prop('disabled', true);
 }
 
 function roundToDecimalPlaces(num, decimalPlaces) {
@@ -197,15 +211,6 @@ function roundToDecimalPlaces(num, decimalPlaces) {
 }
 
 function refresh_data() {
-/*
-    var outputSourdoughFlour = parseInt($("#outputSourdoughFlour").val()); 
-    var outputSourdoughWater = parseInt($("#outputSourdoughWater").val());
-    var outputTotalDoughWeight = parseInt($("#outputTotalDoughWeight").val());
-    var outputFlour = parseInt($("#outputFlour").val());
-    var outputWater = parseInt($("#outputWater").val());
-    var outputSaltAmount = parseInt($("#outputSaltAmount").val());
-*/
-    var inputTotalWeight = parseFloat($("#inputTotalWeight").val());
     var inputSourdoughStarter = parseFloat($("#inputSourdoughStarter").val());
     var inputSourdoughHydration = parseFloat($("#inputSourdoughHydration").val());
     var inputTargetHydration = parseFloat($("#inputTargetHydration").val());
@@ -215,39 +220,39 @@ function refresh_data() {
     var outputSourdoughFlour = inputSourdoughStarter / (1 + inputSourdoughHydration / 100);
     var outputSourdoughWater = inputSourdoughStarter - outputSourdoughFlour;
 
-    // Baker's percentage: totalWeight = totalFlour * (1 + hydration% + salt%)
-    var totalFlour = inputTotalWeight / (1 + inputTargetHydration / 100 + inputSalt / 100);
+    var totalFlour;
+    var flourMode = $('#modeFlour').is(':checked');
 
-    // Flour to add = total flour minus the flour already in the starter
+    if (flourMode) {
+        // User entered flour directly; derive total weight
+        totalFlour = parseFloat($("#inputFlourAmount").val());
+        var calculatedTotalWeight = totalFlour * (1 + inputTargetHydration / 100 + inputSalt / 100);
+        $("#inputTotalWeight").val(roundToDecimalPlaces(calculatedTotalWeight, 1));
+    } else {
+        // User entered total dough weight; derive flour
+        var inputTotalWeight = parseFloat($("#inputTotalWeight").val());
+        totalFlour = inputTotalWeight / (1 + inputTargetHydration / 100 + inputSalt / 100);
+        $("#inputFlourAmount").val(roundToDecimalPlaces(totalFlour, 1));
+    }
+
     var outputFlour = totalFlour - outputSourdoughFlour;
-
-    // Water to add = total water minus the water already in the starter
     var totalWater = totalFlour * (inputTargetHydration / 100);
     var outputWater = totalWater - outputSourdoughWater;
-
-    // Salt is a percentage of total flour
     var outputSalt = totalFlour * (inputSalt / 100);
+    var totalDoughWeight = totalFlour + totalWater + outputSalt;
 
     $("#outputSourdoughFlour").val(roundToDecimalPlaces(outputSourdoughFlour, 1) + " g");
     $("#outputSourdoughWater").val(roundToDecimalPlaces(outputSourdoughWater, 1) + " g");
     $("#outputFlour").val(Math.round(outputFlour) + " g");
     $("#outputWater").val(Math.round(outputWater) + " g");
     $("#outputSaltAmount").val(roundToDecimalPlaces(outputSalt, 1) + " g");
-    $("#outputTotalDoughWeight").val(inputTotalWeight + " g");
+    $("#outputTotalDoughWeight").val(Math.round(totalDoughWeight) + " g");
 
-    //labels
     $("#final-step1-label").text("Add " + Math.round(outputWater) + "g water");
     $("#final-step2-label").text("Add " + Math.round(outputFlour) + "g flour.");
     $("#final-step3-label").text("Allow to autolyse for 30 min");
     $("#final-step4-label").text("Add " + inputSourdoughStarter + "g sourdough starter");
     $("#final-step5-label").text("Add " + roundToDecimalPlaces(outputSalt, 1) + "g salt");
-
-    // Verify totals sum to target weight
-    console.log("Starter: " + inputSourdoughStarter + "g");
-    console.log("Flour to add: " + Math.round(outputFlour) + "g (total flour: " + roundToDecimalPlaces(totalFlour, 1) + "g)");
-    console.log("Water to add: " + Math.round(outputWater) + "g (total water: " + roundToDecimalPlaces(totalWater, 1) + "g)");
-    console.log("Salt: " + roundToDecimalPlaces(outputSalt, 1) + "g");
-    console.log("Sum: " + (outputFlour + outputWater + outputSalt + inputSourdoughStarter) + "g (target: " + inputTotalWeight + "g)");
 }
 
 
@@ -257,6 +262,14 @@ $( "input" ).keyup(function() {
     refresh_data();
 });
 $( "input" ).change(function() {
+    refresh_data();
+});
+
+// Toggle between total-weight mode and flour-amount mode
+$('input[name="calcMode"]').change(function() {
+    var flourMode = $('#modeFlour').is(':checked');
+    $('#inputFlourAmount').prop('disabled', !flourMode);
+    $('#inputTotalWeight').prop('disabled', flourMode);
     refresh_data();
 });
 
