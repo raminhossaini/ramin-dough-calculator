@@ -63,6 +63,21 @@ printImageBlock(BIGA_48, "./img/biga-48.png", "Ramin's 48-hour 100% Biga Recipe"
 printImageBlock(SOURDOUGH, "./img/sourdough.png", "Ramin's Sourdough Pizza", "A Neapolitan pizza made with a sourdough starter offers a naturally leavened crust with a tangy depth of flavor, chewy texture, and rustic character.");
 
 ?>
+  </div>
+
+<hr>
+
+    <div class="row g-3 align-items-center">
+        <h2 class="pt-3">Ramin's Other Calculators</h2>
+    </div>
+    <div class="row g-3 align-items-center">
+
+<?php
+
+printImageBlock(SOURDOUGH_BREAD, "./img/sourdough-bread.png", "Generic Sourdough Bread Calculator", "A calculator to make sure measurements are correct when aiming for a particular hydration.");
+
+?>
+  </div>
 
 <div class="table-responsive">
   <table class="table table-striped fa-check text-successtable-border border-light">

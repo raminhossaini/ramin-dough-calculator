@@ -321,9 +321,9 @@ function refresh_data() {
     $("#inputBigaWater").val(flourWeight/2);
     $("#inputBigaYeast").val(firstYeast);
 
-    var bigaFlourWeight = parseInt($("#inputBigaFlour").val());
-    var bigaWaterWeight = parseInt($("#inputBigaWater").val());
-    var bigaYeastWeight = parseInt($("#inputBigaYeast").val());
+    var bigaFlourWeight = parseFloat($("#inputBigaFlour").val());
+    var bigaWaterWeight = parseFloat($("#inputBigaWater").val());
+    var bigaYeastWeight = parseFloat($("#inputBigaYeast").val());
 
     var remainingFlour = Math.round( flourWeight - bigaFlourWeight );
     var remainingWater = Math.round( waterWeight - bigaWaterWeight );

@@ -284,7 +284,7 @@ function setDefaults() {
     $('#inputTime').val(dayjs().add(25, 'hour').format('HH:mm'));
     $('#inputPortions').val('2');
     $('#inputPortionSize').val('260');
-    $('#inputHydration').val('70');0
+    $('#inputHydration').val('70');
     $('#inputPoolishHydration').val('70');
     $('#inputSalt').val('3');
 }
