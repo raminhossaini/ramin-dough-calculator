@@ -126,11 +126,11 @@ printImageBlock(SOURDOUGH_BREAD, "./img/sourdough-bread.png", "Generic Sourdough
       </tr>
       <tr>
         <th scope="row">Flavour</th>
-        <td>Delicate, Subtle</i></td>
-        <td>Tangy</i></td>
-        <td>Delicate, Subtle</i></td>
-        <td>Deep Complex</i></td>
-        <td>Tangy</i></td>
+        <td>Mild, Delicate Tang</td>
+        <td>Rich, Nuanced Tang</td>
+        <td>Nutty, Subtly Sweet</td>
+        <td>Nutty, Deeply Complex</td>
+        <td>Bold, Sour Tang</td>
       </tr>
     </tbody>
   </table>
