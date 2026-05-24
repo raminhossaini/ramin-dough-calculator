@@ -24,7 +24,11 @@
 <div class="container">
     <?php include './include/navbar.php';?>
 
-    <h2 class="font-monospace">Generic Sourdough Bread Calculator</h2>
+    <div class="mb-3">
+        <span class="h2 mb-3 font-monospace">Generic Sourdough Bread Calculator</span>
+        <a href="<?=GITHUB_ROOT;?>/discussions/3"><span class="badge text-bg-secondary align-text-top">Beta</span></a>
+    </div>
+
     <?php include './include/page-actions.php'; ?>
 
     </div>
@@ -68,7 +72,8 @@
         </div>
     </div>
         <div class="row">
-                    <!-- Weight / Flour inputs with mode toggle -->
+            
+            <!-- Weight / Flour inputs with mode toggle -->
             <div class="col-md-2 w-auto">
                 <div class="btn-group btn-group-sm mb-2" role="group">
                     <input type="radio" class="btn-check" name="calcMode" id="modeWeight" autocomplete="off" checked>
@@ -177,9 +182,6 @@
             </ul>
         </div>
     </div>
-
-
-
 
 
         <div class="row mb-4">

@@ -29,15 +29,13 @@ TODO:
 <div class="container">
     <?php include './include/navbar.php';?>
 
-    <h2 class="font-monospace">Ramin's Sourdough Pizza Recipe</h1>
+    <div class="mb-3">
+        <span class="h2 mb-3 font-monospace">Ramin's Sourdough Pizza Recipe</span>
+        <a href="<?=GITHUB_ROOT;?>/discussions/4"><span class="badge text-bg-secondary align-text-top">Beta</span></a>
+    </div>
+
     <?php include './include/page-actions.php'; ?>
-    <div class="row">
-        <div class="col">
-            <div class="alert alert-warning" id="BETA-WARNING" role="alert">
-                This is a recipe I have been experimenting with for while now. It is still in its early stages and might not be perfect. Treat it as such.
-            </div>
-        </div>
-    </div> <!-- row -->
+    
     
     <div class="row">
         

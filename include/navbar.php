@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-site-chrome" >
     <div class="container-fluid">
 
             <a class="navbar-brand" href="index.php">
@@ -17,7 +17,7 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Recipe Calculators
                     </a>
-                    <ul class="dropdown-menu" data-bs-theme="light">
+                    <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="<?=ORIGINAL;?>">Original 24-hour Pizza Dough</a></li>
                         <li><a class="dropdown-item" href="<?=DOUBLE_FERMENTED;?>">Double-fermented 48-hour Pizza Dough</a></li>
                         <li><a class="dropdown-item" href="<?=BIGA_24;?>">Original 24-hour 100% Biga Recipe</a></li>
@@ -45,5 +45,10 @@
                 </ul>
 
             </div>
+
+            <button id="themeToggle" onclick="toggleTheme()" title="Toggle dark mode" aria-label="Toggle dark mode">
+                <i class="bi bi-moon-fill"></i>
+            </button>
+
     </div>
 </nav>

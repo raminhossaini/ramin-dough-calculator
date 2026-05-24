@@ -1,7 +1,7 @@
 <?php
 
 //Constants
-define("VERSION", "4.5.260524");
+define("VERSION", "5.0.260525");
 
 define("ORIGINAL", "poolish-24.php");
 define("DOUBLE_FERMENTED", "double-fermented.php");

@@ -247,24 +247,24 @@
         <div class="col">
             <ul class="list-group">
             <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="final-step1">
-                <label class="form-check-label stretched-link" for="final-step1">Mix all together by hand or mixer</label>
+                <input class="form-check-input me-1" type="checkbox" value="" id="2nd-ferment-step1">
+                <label class="form-check-label stretched-link" for="2nd-ferment-step1">Mix all together by hand or mixer</label>
             </li>
             <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="final-step2">
-                <label class="form-check-label stretched-link" for="final-step2">Cover and let rest for 20-30 minutes (autolyse)</label>
+                <input class="form-check-input me-1" type="checkbox" value="" id="2nd-ferment-step2">
+                <label class="form-check-label stretched-link" for="2nd-ferment-step2">Cover and let rest for 20-30 minutes (autolyse)</label>
             </li>
             <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="final-step3">
-                <label class="form-check-label stretched-link" for="final-step3">Knead dough and form into ball. Don't worry if dough is still sticky at this stage.</label>
+                <input class="form-check-input me-1" type="checkbox" value="" id="2nd-ferment-step3">
+                <label class="form-check-label stretched-link" for="2nd-ferment-step3">Knead dough and form into ball. Don't worry if dough is still sticky at this stage.</label>
             </li>
             <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="final-step4">
-                <label class="form-check-label stretched-link" for="final-step4"><p>Cover and let rest another 15-20 minutes.</p> <p>Dough will be easier to work with after this period.</p> <p>Dough should be smooth on the surface, bounce back when poked, and pass the windowpane test.</p></label>
+                <input class="form-check-input me-1" type="checkbox" value="" id="2nd-ferment-step4">
+                <label class="form-check-label stretched-link" for="2nd-ferment-step4"><p>Cover and let rest another 15-20 minutes.</p> <p>Dough will be easier to work with after this period.</p> <p>Dough should be smooth on the surface, bounce back when poked, and pass the windowpane test.</p></label>
             </li>
             <li class="list-group-item">
-                <input class="form-check-input me-1" type="checkbox" value="" id="final-step6">
-                <label class="form-check-label stretched-link" for="final-step6"><p>Place on tray and cover with cling-film or cover container with lid.</p> <p>Refrigerate for 16-24 hours</p></label>
+                <input class="form-check-input me-1" type="checkbox" value="" id="2nd-ferment-step5">
+                <label class="form-check-label stretched-link" for="2nd-ferment-step5"><p>Place on tray and cover with cling-film or cover container with lid.</p> <p>Refrigerate for 16-24 hours</p></label>
             </li>
             </ul>
         </div>

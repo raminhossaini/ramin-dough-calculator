@@ -36,6 +36,7 @@
                     What's New?
                 </div>
                 <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>May 2026</strong> &mdash; Added Dark mode. Various fixes. More links to Github page.</li>
                     <li class="list-group-item"><strong>May 2026</strong> &mdash; Added Generic Sourdough Bread Calculator under "Other Calculators".</li>
                     <li class="list-group-item"><strong>April 2026</strong> &mdash; Added session memory: your last inputs are now restored when you return to a calculator.</li>
                 </ul>
@@ -154,25 +155,6 @@ printImageBlock(SOURDOUGH_BREAD, "./img/sourdough-bread.png", "Generic Sourdough
 
 
 
-</div>
-
-<!--
-<a href="<?=ORIGINAL;?>" style="text-decoration: none;">
-<div class="card mb-3" style="">
-  <div class="row g-0">
-    <div class="col-md-1">
-      <img src="./img/poolish.png" class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-11">
-      <div class="card-body">
-        <h5 class="card-title">Original 24-hour Pizza Dough</h5>
-        <p class="card-text">A Neapolitan pizza made with a poolish preferment boasts a light, airy crust with subtle complexity and a delicate tang from its long, slow fermentation.</p>
-      </div>
-    </div>
-  </div>
-</div>
-</a>
--->
 
 
 
