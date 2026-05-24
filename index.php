@@ -28,6 +28,21 @@
     <div class="row g-3 align-items-center">
         <h2 class="pt-3">Ramin's Pizza Calculators</h2>
     </div>
+
+    <div class="row g-3 mb-3">
+        <div class="col-12">
+            <div class="card border-success">
+                <div class="card-header bg-success text-white fw-bold">
+                    What's New?
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>May 2026</strong> &mdash; Added Generic Sourdough Bread Calculator under "Other Calculators".</li>
+                    <li class="list-group-item"><strong>April 2026</strong> &mdash; Added session memory: your last inputs are now restored when you return to a calculator.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <div class="row g-3 align-items-center">
 
 <?php
