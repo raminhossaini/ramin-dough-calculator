@@ -75,6 +75,15 @@ TODO:
             <span class="input-group-text">%</span>
             </div>
         </div>
+
+        <!-- Salt % -->
+        <div class="col-auto w-auto">
+            <div class="input-group mb-3">
+            <span class="input-group-text">Salt</span>
+            <input type="text" id="inputSaltPercentage" class="form-control" aria-label="" value="3">
+            <span class="input-group-text">%</span>
+            </div>
+        </div>
     </div>
 
     <!-- Any warning messages come here -->
@@ -148,7 +157,7 @@ TODO:
 
 
     <div class="row mb-2 gy-1">
-        <h2 class=" font-monospace">Autolyse:</h2>
+        <h2 class=" font-monospace">Step 1: Autolyse:</h2>
         <div class="col-auto">
             <form class="form-floating font-monospace">
                 <input type="text" id="inputFlour" class="form-control" value="100" aria-describedby="" disabled readonly>
@@ -191,7 +200,7 @@ TODO:
     </div>
 
     <div class="row gy-1">
-        <h2 class="gy-5 font-monospace">Bulk Ferment:</h2>
+        <h2 class="gy-5 font-monospace">Step 2: Bulk Ferment:</h2>
 
         <!-- Total Salt -->
         <div class="col-auto">
@@ -206,11 +215,11 @@ TODO:
                 <ul class="list-group">
                     <li class="list-group-item">
                         <input class="form-check-input me-1" type="checkbox" value="" id="bulk-ferment-step1">
-                        <label class="form-check-label stretched-link" for="bulk-ferment-step1">Start the mixer again, and add the salt little by little until fully incorporated.</label>
+                        <label class="form-check-label stretched-link" for="bulk-ferment-step1">Start the mixer again, and add the salt little by little until fully incorporated. <br/> The best would be to knead by hand at this point, because you will feel when the salt has been dissolved into the dough.</label>
                     </li>
                     <li class="list-group-item">
                         <input class="form-check-input me-1" type="checkbox" value="" id="bulk-ferment-step2">
-                        <label class="form-check-label stretched-link" for="bulk-ferment-step2">Let sit at room temperature for 2-3 hours if warm, 5-6 hours if cooler</label>
+                        <label class="form-check-label stretched-link" for="bulk-ferment-step2">Form into balls. Let sit at room temperature, covered for 30 min</label>
                     </li>
                 </ul>
             </div>
@@ -219,19 +228,19 @@ TODO:
 
 
     <div class="row">
-        <h2 class="gy-5 font-monospace">Cold Proof:</h2>
+        <h2 class="gy-5 font-monospace">Step 3: Cold Proof:</h2>
         <div class="col">
             <ul class="list-group">
             <li class="list-group-item">
                 <input class="form-check-input me-1" type="checkbox" value="" id="cold-proof-step1">
-                <label class="form-check-label stretched-link" for="cold-proof-step1">Must pass window-pane test. Form into balls and transfer to refigerator overnight. Avoid using flour.</label>
+                <label class="form-check-label stretched-link" for="cold-proof-step1">Transfer to refigerator till day of eating, ideally for the next 48 hours. You can cold ferment for 72 hours too if your flour is strong enough. <br/> If you feel the hydration and fermentation time combination is too sticky, try a lower hydration. <br/> Extended bulk fermentation or cold-fermentation causes enzymatic activity to break down the gluten structure. Highly hydrated doughs can become very loose and sticky over time, making it feel "wetter" and requiring reshaping to maintain tension.</label>
             </li>
             </ul>
         </div>
     </div>
 
     <div class="row mb-5">
-        <h2 class="gy-5 font-monospace">On Day of Eating:</h2>
+        <h2 class="gy-5 font-monospace">Step 4: On Day of Eating:</h2>
         <div class="row gy-1">
             <div class="col">        
 
@@ -241,8 +250,8 @@ TODO:
                         <label class="form-check-label stretched-link" for="bake-day-step1">6 hours before eating, take out of the refrigerator to reach room temperature. May need more time if room temp is cold.</label>
                     </li>
                     <li class="list-group-item">
-                        <input class="form-check-input me-1" type="checkbox" value="" id="bake-day-step3">
-                        <label class="form-check-label stretched-link" for="bake-day-step3">Place in proofing tray for 3 hours, and it will be ready to stretch and bake</label>
+                        <input class="form-check-input me-1" type="checkbox" value="" id="bake-day-step2">
+                        <label class="form-check-label stretched-link" for="bake-day-step2">Stretch and bake</label>
                     </li>
                 </ul>
             </div>
@@ -262,6 +271,7 @@ TODO:
         $('#inputPortionSize').val('250');
         $('#inputHydration').val('68');
         $('#inputSourdoughPercentage').val('5');
+        $('#inputSaltPercentage').val('3');
     }
 
     function refresh_data()
@@ -269,14 +279,15 @@ TODO:
         var portionSize = parseInt($("#inputPortionSize").val());
         var portions = parseInt($("#inputPortions").val());
         var hydration = parseInt($("#inputHydration").val());
-        var sourdoughPercentage = parseFloat($("#inputSourdoughPercentage").val()); 
+        var sourdoughPercentage = parseFloat($("#inputSourdoughPercentage").val());
+        var saltPercentage = parseFloat($("#inputSaltPercentage").val());
 
         var totalDoughWeight = Math.round( portions * portionSize);                 //Dough weight is PORTIONS * PORTION-SIZE - this is the targer
-        
-        var flourWeight = Math.round( totalDoughWeight / ((hydration/100) + (3/100) + (sourdoughPercentage/100) +1) );     //Flour weight is TOTAL-DOUGH-WEIGHT / ((HYDRATION / 100) + 1)
+
+        var flourWeight = Math.round( totalDoughWeight / ((hydration/100) + (saltPercentage/100) + (sourdoughPercentage/100) +1) );     //Flour weight is TOTAL-DOUGH-WEIGHT / ((HYDRATION / 100) + 1)
         var waterWeight = Math.round((hydration / 100) * flourWeight);              //Water is HYDRATION /100 * flourWeight
         var sourdoughStarterWeight = Math.round((sourdoughPercentage/100) * flourWeight);
-        var saltWeight = Math.round( 0.03 * flourWeight);                           //Salt is 3% of Flour weight        
+        var saltWeight = Math.round( (saltPercentage/100) * flourWeight);
 
 
         $("#inputTotalDoughWeight").val(totalDoughWeight); 
@@ -316,8 +327,6 @@ TODO:
             $("#calculationsCheck").append("<p>Salt % is: " + Math.round(saltWeight / flourWeight * 100) + "</p>");
             $("#calculationsCheck").append("<p>Water % is: " + Math.round(waterWeight / flourWeight * 100) + "</p>");
             $("#calculationsCheck").append("<p>Sourdough Starter % is: " + Math.round(sourdoughStarterWeight / flourWeight * 100) + "</p>");
-            
-
         }
 
     }
