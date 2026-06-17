@@ -30,9 +30,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="faqs.php">FAQs</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.ramin-hossaini.com/donate/">Donate</a>
-                    </li>
+                    <!--<li class="nav-item">
+                        <a class="nav-link" href="https://ramin.io/donate/">Donate</a>
+                    </li>-->
                     <li class="nav-item">
                         <a class="nav-link" href="<?=GITHUB_ROOT;?>/discussions">Contact</a>
                     </li>

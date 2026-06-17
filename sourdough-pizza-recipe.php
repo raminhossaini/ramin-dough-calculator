@@ -239,7 +239,7 @@ TODO:
         </div>
     </div>
 
-    <div class="row mb-5">
+    <div class="row mb-2">
         <h2 class="gy-5 font-monospace">Step 4: On Day of Eating:</h2>
         <div class="row gy-1">
             <div class="col">        
@@ -257,7 +257,7 @@ TODO:
             </div>
         </div>
     </div>
-
+    
     <?php include './include/footer.php'; ?>
 
 
