@@ -36,6 +36,7 @@
                     What's New?
                 </div>
                 <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>June 2026</strong> &mdash; Improved and refined the sourdough pizza calculator.</li>
                     <li class="list-group-item"><strong>May 2026</strong> &mdash; Added Dark mode. Various fixes. More links to Github page.</li>
                     <li class="list-group-item"><strong>May 2026</strong> &mdash; Added Generic Sourdough Bread Calculator under "Other Calculators".</li>
                     <li class="list-group-item"><strong>April 2026</strong> &mdash; Added session memory: your last inputs are now restored when you return to a calculator.</li>
