@@ -28,6 +28,9 @@
                     </ul>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="<?=MY_RECIPES;?>">My Recipes</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="faqs.php">FAQs</a>
                     </li>
                     <!--<li class="nav-item">

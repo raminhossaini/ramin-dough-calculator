@@ -36,10 +36,10 @@
                     What's New?
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><strong>June 2026</strong> &mdash; Improved and refined the sourdough pizza calculator.</li>
+                    <li class="list-group-item"><strong>July 2026</strong> &mdash; <a href="<?=MY_RECIPES;?>">Build your own recipes!</a> Create custom recipes with baker's percentages, share them with a link or QR code, and export/import them as files. Stored in your browser &mdash; no account needed.</li>
+                    <li class="list-group-item"><strong>June 2026</strong> &mdash; Improved and refined the <a href="<?=SOURDOUGH;?>">sourdough pizza calculator</a>.</li>
                     <li class="list-group-item"><strong>May 2026</strong> &mdash; Added Dark mode. Various fixes. More links to Github page.</li>
-                    <li class="list-group-item"><strong>May 2026</strong> &mdash; Added Generic Sourdough Bread Calculator under "Other Calculators".</li>
-                    <li class="list-group-item"><strong>April 2026</strong> &mdash; Added session memory: your last inputs are now restored when you return to a calculator.</li>
+                    <li class="list-group-item"><strong>May 2026</strong> &mdash; Added <a href="<?=SOURDOUGH_BREAD;?>">Generic Sourdough Bread Calculator</a> under "Other Calculators".</li>
                 </ul>
             </div>
         </div>
