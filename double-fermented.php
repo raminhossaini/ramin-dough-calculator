@@ -291,6 +291,10 @@
                 <input class="form-check-input me-1" type="checkbox" value="" id="final-step7">
                 <label class="form-check-label stretched-link" for="final-step7">Form pizza bases and bake!</label>
             </li>
+            <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" id="bake-step8">
+                <label class="form-check-label stretched-link" for="bake-step8">Target temp: Aim for a center stone temperature of around 400°C to 430°C (750°F - 800°F)</label>
+            </li>
             </ul>
         </div>
     </div>
