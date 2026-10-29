@@ -99,7 +99,16 @@
         <div class="col-md-2 w-auto">
             <div class="input-group mb-3">
             <span class="input-group-text">Salt</span>
-            <input type="text" id="inputSalt" class="form-control" aria-label="" value="3">
+            <input type="text" id="inputSalt" class="form-control" aria-label="" value="2.5">
+            <span class="input-group-text">%</span>
+            </div> <!-- Input group -->
+        </div>
+
+        <!-- Olive Oil (optional) -->
+        <div class="col-md-2 w-auto">
+            <div class="input-group mb-3">
+            <span class="input-group-text">Olive Oil</span>
+            <input type="text" id="inputOil" class="form-control" aria-label="" value="0" title="Optional. Typically 2-8%. Leave at 0 for a classic Neapolitan dough.">
             <span class="input-group-text">%</span>
             </div> <!-- Input group -->
         </div>
@@ -148,6 +157,14 @@
             <form class="form-floating font-monospace">
                 <input type="text" id="inputSaltAmount" class="form-control" value="" aria-describedby="" disabled readonly>
                 <label for="inputSaltAmount">Total Salt (g)</label>
+            </form>
+        </div>
+
+        <!-- Total Olive Oil -->
+        <div class="col-auto oilModule">
+            <form class="form-floating font-monospace">
+                <input type="text" id="inputOilAmount" class="form-control" value="" aria-describedby="" disabled readonly>
+                <label for="inputOilAmount">Total Olive Oil (g)</label>
             </form>
         </div>
 
@@ -238,6 +255,13 @@
                 <label for="inputRemainingSalt">Salt (g)</label>
             </form>
         </div>
+
+        <div class="col-auto oilModule">
+            <form class="form-floating font-monospace">
+                <input type="text" id="inputRemainingOil" class="form-control" value="" aria-describedby="" disabled readonly>
+                <label for="inputRemainingOil">Olive Oil (g)</label>
+            </form>
+        </div>
     </div> <!-- row -->
 
 
@@ -253,6 +277,10 @@
             <li class="list-group-item">
                 <input class="form-check-input me-1" type="checkbox" value="" id="2nd-ferment-step2">
                 <label class="form-check-label stretched-link" for="2nd-ferment-step2">Cover and let rest for 20-30 minutes (autolyse)</label>
+            </li>
+            <li class="list-group-item oilModule">
+                <input class="form-check-input me-1" type="checkbox" value="" id="2nd-ferment-oil">
+                <label class="form-check-label stretched-link" for="2nd-ferment-oil">Once the flour and water have come together and the water has been absorbed, slowly drizzle in the olive oil while mixing until fully incorporated. <br/> Don't add it at the very beginning: oil coats the dry flour and slows down hydration and gluten development.</label>
             </li>
             <li class="list-group-item">
                 <input class="form-check-input me-1" type="checkbox" value="" id="2nd-ferment-step3">
@@ -314,7 +342,8 @@ function setDefaults() {
     $('#inputPortionSize').val('260');
     $('#inputHydration').val('70');
     $('#inputPoolishHydration').val('70');
-    $('#inputSalt').val('3');
+    $('#inputSalt').val('2.5');
+    $('#inputOil').val('0');
 }
 
 function refresh_data() {
@@ -322,12 +351,14 @@ function refresh_data() {
     var portions = parseInt($("#inputPortions").val());
     var hydration = parseInt($("#inputHydration").val());
     var salt = parseFloat($("#inputSalt").val());
+    var oil = parseFloat($("#inputOil").val()) || 0;                            //Olive oil is optional, 0 means none
     var poolishPercentage = parseInt($("#inputPoolishPercentage").val());
 
     var totalDoughWeight = Math.round( portions * portionSize );                //Dough weight is PORTIONS * PORTION-SIZE
-    var flourWeight = Math.round( totalDoughWeight / ((hydration/100) + (salt/100)+1));     //Flour weight is TOTAL-DOUGH-WEIGHT / ((HYDRATION / 100) + 1)
+    var flourWeight = Math.round( totalDoughWeight / ((hydration/100) + (salt/100) + (oil/100) + 1));     //Flour weight is TOTAL-DOUGH-WEIGHT / ((HYDRATION + SALT + OIL) / 100 + 1)
     var waterWeight = Math.round((hydration / 100) * flourWeight);              //Water is HYDRATION /100 * flourWeight
-    var saltWeight = Math.round( (salt / 100) * flourWeight);                   //Salt is 3% of Flour weight
+    var saltWeight = Math.round( (salt / 100) * flourWeight);                   //Salt is SALT% of Flour weight
+    var oilWeight = Math.round( (oil / 100) * flourWeight);                     //Olive oil is OIL% of Flour weight
 
     var poolishAmount = Math.round((poolishPercentage / 100) * flourWeight);               //The total amount of poolish required
     var yeastAmount = Math.round( (1/100) * poolishAmount );     // Yeast is 1% of poolish value
@@ -415,6 +446,7 @@ function refresh_data() {
     $("#inputFlour").val(flourWeight); 
     $("#inputWater").val(waterWeight); 
     $("#inputSaltAmount").val(saltWeight); 
+    $("#inputOilAmount").val(oilWeight);
 
     var poolishFlourWeight = parseInt($("#inputPoolishFlour").val());
     var poolishWaterWeight = parseInt($("#inputPoolishWater").val());
@@ -427,6 +459,10 @@ function refresh_data() {
     $("#inputRemainingFlour").val(remainingFlour);
     $("#inputRemainingWater").val(remainingWater);
     $("#inputRemainingSalt").val(remainingSalt);
+    $("#inputRemainingOil").val(oilWeight);
+
+    //Only show olive oil amounts and steps when oil is used
+    $(".oilModule").toggle(oil > 0);
 
 }
 

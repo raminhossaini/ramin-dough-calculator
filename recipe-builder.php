@@ -234,7 +234,7 @@ $(document).ready(function () {
     } else {
         // Sensible starting point for a new recipe
         addIngredientRow('Water', 65);
-        addIngredientRow('Salt', 3);
+        addIngredientRow('Salt', 2.5);
         addIngredientRow('Instant Yeast', 0.5);
     }
 

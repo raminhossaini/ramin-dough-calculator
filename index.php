@@ -36,6 +36,7 @@
                     What's New?
                 </div>
                 <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>October 2026</strong> &mdash; Optional olive oil (typically 2-8%) on all pizza calculators, added after the flour and water have come together. Leave it at 0% for a classic Neapolitan dough. Default salt is now 2.5%.</li>
                     <li class="list-group-item"><strong>July 2026</strong> &mdash; <a href="<?=MY_RECIPES;?>">Build your own recipes!</a> Create custom recipes with baker's percentages, share them with a link or QR code, and export/import them as files. Stored in your browser &mdash; no account needed.</li>
                     <li class="list-group-item"><strong>June 2026</strong> &mdash; Improved and refined the <a href="<?=SOURDOUGH;?>">sourdough pizza calculator</a>.</li>
                     <li class="list-group-item"><strong>May 2026</strong> &mdash; Added Dark mode. Various fixes. More links to Github page.</li>

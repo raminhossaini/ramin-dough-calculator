@@ -6,7 +6,7 @@ TODO:
     - Time calculations
     - FAQs section
         - How to make stiff sourdough starter
-        - Note on 3% salt value
+        - Note on 2.5% salt value
 -->
 <head>
     <?php
@@ -80,7 +80,16 @@ TODO:
         <div class="col-auto w-auto">
             <div class="input-group mb-3">
             <span class="input-group-text">Salt</span>
-            <input type="text" id="inputSaltPercentage" class="form-control" aria-label="" value="3">
+            <input type="text" id="inputSaltPercentage" class="form-control" aria-label="" value="2.5">
+            <span class="input-group-text">%</span>
+            </div>
+        </div>
+
+        <!-- Olive Oil % (optional) -->
+        <div class="col-auto w-auto">
+            <div class="input-group mb-3">
+            <span class="input-group-text">Olive Oil</span>
+            <input type="text" id="inputOilPercentage" class="form-control" aria-label="" value="0" title="Optional. Typically 2-8%. Leave at 0 for a classic Neapolitan dough.">
             <span class="input-group-text">%</span>
             </div>
         </div>
@@ -141,6 +150,14 @@ TODO:
             <form class="form-floating font-monospace">
                 <input type="text" id="totalSalt" class="form-control" value="" aria-describedby="" disabled readonly>
                 <label for="totalSalt">Total Salt (g)</label>
+            </form>
+        </div>
+
+        <!-- Total Olive Oil -->
+        <div class="col-auto oilModule">
+            <form class="form-floating font-monospace">
+                <input type="text" id="totalOil" class="form-control" value="" aria-describedby="" disabled readonly>
+                <label for="totalOil">Total Olive Oil (g)</label>
             </form>
         </div>
     </div> <!-- row -->
@@ -210,12 +227,24 @@ TODO:
             </form>
         </div>
 
+        <!-- Total Olive Oil -->
+        <div class="col-auto oilModule">
+            <form class="form-floating font-monospace">
+                <input type="text" id="inputOil" class="form-control" value="" aria-describedby="" disabled readonly>
+                <label for="inputOil">Total Olive Oil (g)</label>
+            </form>
+        </div>
+
         <div class="row gy-1">
             <div class="col">        
                 <ul class="list-group">
                     <li class="list-group-item">
                         <input class="form-check-input me-1" type="checkbox" value="" id="bulk-ferment-step1">
                         <label class="form-check-label stretched-link" for="bulk-ferment-step1">Start the mixer again, and add the salt little by little until fully incorporated. <br/> The best would be to knead by hand at this point, because you will feel when the salt has been dissolved into the dough.</label>
+                    </li>
+                    <li class="list-group-item oilModule">
+                        <input class="form-check-input me-1" type="checkbox" value="" id="bulk-ferment-oil">
+                        <label class="form-check-label stretched-link" for="bulk-ferment-oil">Now that the flour and water have come together and the water has been absorbed, slowly drizzle in the olive oil while mixing until fully incorporated. <br/> Don't add it at the very beginning: oil coats the dry flour and slows down hydration and gluten development.</label>
                     </li>
                     <li class="list-group-item">
                         <input class="form-check-input me-1" type="checkbox" value="" id="bulk-ferment-step2">
@@ -275,7 +304,8 @@ TODO:
         $('#inputPortionSize').val('250');
         $('#inputHydration').val('68');
         $('#inputSourdoughPercentage').val('5');
-        $('#inputSaltPercentage').val('3');
+        $('#inputSaltPercentage').val('2.5');
+        $('#inputOilPercentage').val('0');
     }
 
     function refresh_data()
@@ -285,13 +315,15 @@ TODO:
         var hydration = parseInt($("#inputHydration").val());
         var sourdoughPercentage = parseFloat($("#inputSourdoughPercentage").val());
         var saltPercentage = parseFloat($("#inputSaltPercentage").val());
+        var oilPercentage = parseFloat($("#inputOilPercentage").val()) || 0;       //Olive oil is optional, 0 means none
 
         var totalDoughWeight = Math.round( portions * portionSize);                 //Dough weight is PORTIONS * PORTION-SIZE - this is the targer
 
-        var flourWeight = Math.round( totalDoughWeight / ((hydration/100) + (saltPercentage/100) + (sourdoughPercentage/100) +1) );     //Flour weight is TOTAL-DOUGH-WEIGHT / ((HYDRATION / 100) + 1)
+        var flourWeight = Math.round( totalDoughWeight / ((hydration/100) + (saltPercentage/100) + (oilPercentage/100) + (sourdoughPercentage/100) +1) );     //Flour weight is TOTAL-DOUGH-WEIGHT / ((HYDRATION / 100) + 1)
         var waterWeight = Math.round((hydration / 100) * flourWeight);              //Water is HYDRATION /100 * flourWeight
         var sourdoughStarterWeight = Math.round((sourdoughPercentage/100) * flourWeight);
         var saltWeight = Math.round( (saltPercentage/100) * flourWeight);
+        var oilWeight = Math.round( (oilPercentage/100) * flourWeight);
 
 
         $("#inputTotalDoughWeight").val(totalDoughWeight); 
@@ -302,7 +334,12 @@ TODO:
         $("#inputWater").val(waterWeight); 
         $("#totalSalt").val(saltWeight); 
         $("#inputSalt").val(saltWeight); 
+        $("#totalOil").val(oilWeight);
+        $("#inputOil").val(oilWeight);
         $("#inputSourdoughStarter").val(sourdoughStarterWeight);
+
+        //Only show olive oil amounts and steps when oil is used
+        $(".oilModule").toggle(oilPercentage > 0);
 
         //hide warnings by default
         $("#hydration-warning").hide();
@@ -318,7 +355,7 @@ TODO:
 
             //do some calulcations and checks
             //add all weights together
-            var calc1 = flourWeight + waterWeight + sourdoughStarterWeight + saltWeight;
+            var calc1 = flourWeight + waterWeight + sourdoughStarterWeight + saltWeight + oilWeight;
             var calc2 = totalDoughWeight;
             if (calc1 / calc2 > 0.99) {
                 $("#calculationsCheck").text("Value totals are correct");
@@ -330,6 +367,7 @@ TODO:
 
             $("#calculationsCheck").append("<p>Salt % is: " + Math.round(saltWeight / flourWeight * 100) + "</p>");
             $("#calculationsCheck").append("<p>Water % is: " + Math.round(waterWeight / flourWeight * 100) + "</p>");
+            $("#calculationsCheck").append("<p>Olive Oil % is: " + Math.round(oilWeight / flourWeight * 100) + "</p>");
             $("#calculationsCheck").append("<p>Sourdough Starter % is: " + Math.round(sourdoughStarterWeight / flourWeight * 100) + "</p>");
         }
 

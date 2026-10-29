@@ -66,7 +66,7 @@
         <div class="col-md-2 w-auto">
             <div class="input-group mb-3">
             <span class="input-group-text">Salt</span>
-            <input type="text" id="inputSalt" class="form-control" aria-label="" value="2">
+            <input type="text" id="inputSalt" class="form-control" aria-label="" value="2.5">
             <span class="input-group-text">%</span>
             </div> <!-- Input group -->
         </div>
@@ -202,7 +202,7 @@ function setDefaults() {
     $('#inputSourdoughHydration').val('100');
     $('#inputTargetHydration').val('75');
     $('#inputTotalWeight').val('900').prop('disabled', false);
-    $('#inputSalt').val('2');
+    $('#inputSalt').val('2.5');
     $('#modeWeight').prop('checked', true);
     $('#inputFlourAmount').val('').prop('disabled', true);
 }

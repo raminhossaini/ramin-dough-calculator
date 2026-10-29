@@ -15,7 +15,7 @@ A collection of pizza and bread dough calculators. Pick a recipe, set how many d
 | Sourdough Pizza | Sourdough starter | 24–48 h |
 | Generic Sourdough Bread | Sourdough starter | — |
 
-Each pizza calculator lets you tune portions, portion size, hydration and salt, and generates a schedule with checkboxes based on your chosen start date and time.
+Each pizza calculator lets you tune portions, portion size, hydration, salt and (optionally) olive oil, and generates a schedule with checkboxes based on your chosen start date and time.
 
 ## Build your own recipes
 
